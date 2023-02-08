@@ -28,93 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UsersButton = new System.Windows.Forms.Button();
-            this.RolesButton = new System.Windows.Forms.Button();
-            this.ContractsButton = new System.Windows.Forms.Button();
-            this.EmployeesButton = new System.Windows.Forms.Button();
-            this.WorkHoursButton = new System.Windows.Forms.Button();
-            this.WorkTypesButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.tsbWorkHours = new System.Windows.Forms.ToolStripButton();
+            this.lvMain = new System.Windows.Forms.ListView();
+            this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // UsersButton
+            // tsMain
             // 
-            this.UsersButton.Location = new System.Drawing.Point(12, 12);
-            this.UsersButton.Name = "UsersButton";
-            this.UsersButton.Size = new System.Drawing.Size(84, 38);
-            this.UsersButton.TabIndex = 0;
-            this.UsersButton.Text = "Users";
-            this.UsersButton.UseVisualStyleBackColor = true;
+            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbWorkHours});
+            this.tsMain.Location = new System.Drawing.Point(0, 0);
+            this.tsMain.Name = "tsMain";
+            this.tsMain.Size = new System.Drawing.Size(503, 25);
+            this.tsMain.TabIndex = 7;
+            this.tsMain.Text = "toolStrip1";
             // 
-            // RolesButton
+            // tsbWorkHours
             // 
-            this.RolesButton.Location = new System.Drawing.Point(119, 12);
-            this.RolesButton.Name = "RolesButton";
-            this.RolesButton.Size = new System.Drawing.Size(84, 38);
-            this.RolesButton.TabIndex = 1;
-            this.RolesButton.Text = "Roles";
-            this.RolesButton.UseVisualStyleBackColor = true;
+            this.tsbWorkHours.Image = ((System.Drawing.Image)(resources.GetObject("tsbWorkHours.Image")));
+            this.tsbWorkHours.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbWorkHours.Name = "tsbWorkHours";
+            this.tsbWorkHours.Size = new System.Drawing.Size(138, 22);
+            this.tsbWorkHours.Text = "Odpracované hodiny";
             // 
-            // ContractsButton
+            // lvMain
             // 
-            this.ContractsButton.Location = new System.Drawing.Point(119, 74);
-            this.ContractsButton.Name = "ContractsButton";
-            this.ContractsButton.Size = new System.Drawing.Size(84, 38);
-            this.ContractsButton.TabIndex = 3;
-            this.ContractsButton.Text = "Contracts";
-            this.ContractsButton.UseVisualStyleBackColor = true;
+            this.lvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMain.FullRowSelect = true;
+            this.lvMain.GridLines = true;
+            this.lvMain.HideSelection = false;
+            this.lvMain.Location = new System.Drawing.Point(0, 25);
+            this.lvMain.Name = "lvMain";
+            this.lvMain.Size = new System.Drawing.Size(503, 357);
+            this.lvMain.TabIndex = 8;
+            this.lvMain.UseCompatibleStateImageBehavior = false;
+            this.lvMain.View = System.Windows.Forms.View.Details;
             // 
-            // EmployeesButton
-            // 
-            this.EmployeesButton.Location = new System.Drawing.Point(12, 74);
-            this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Size = new System.Drawing.Size(84, 38);
-            this.EmployeesButton.TabIndex = 2;
-            this.EmployeesButton.Text = "Employees";
-            this.EmployeesButton.UseVisualStyleBackColor = true;
-            // 
-            // WorkHoursButton
-            // 
-            this.WorkHoursButton.Location = new System.Drawing.Point(119, 136);
-            this.WorkHoursButton.Name = "WorkHoursButton";
-            this.WorkHoursButton.Size = new System.Drawing.Size(84, 38);
-            this.WorkHoursButton.TabIndex = 5;
-            this.WorkHoursButton.Text = "Work hours";
-            this.WorkHoursButton.UseVisualStyleBackColor = true;
-            // 
-            // WorkTypesButton
-            // 
-            this.WorkTypesButton.Location = new System.Drawing.Point(12, 136);
-            this.WorkTypesButton.Name = "WorkTypesButton";
-            this.WorkTypesButton.Size = new System.Drawing.Size(84, 38);
-            this.WorkTypesButton.TabIndex = 4;
-            this.WorkTypesButton.Text = "Work types";
-            this.WorkTypesButton.UseVisualStyleBackColor = true;
-            // 
-            // MainFormAdmin
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(217, 187);
-            this.Controls.Add(this.WorkHoursButton);
-            this.Controls.Add(this.WorkTypesButton);
-            this.Controls.Add(this.ContractsButton);
-            this.Controls.Add(this.EmployeesButton);
-            this.Controls.Add(this.RolesButton);
-            this.Controls.Add(this.UsersButton);
-            this.Name = "MainFormAdmin";
+            this.ClientSize = new System.Drawing.Size(503, 382);
+            this.Controls.Add(this.lvMain);
+            this.Controls.Add(this.tsMain);
+            this.MinimumSize = new System.Drawing.Size(212, 421);
+            this.Name = "MainForm";
             this.Text = "Main menu";
+            this.tsMain.ResumeLayout(false);
+            this.tsMain.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button UsersButton;
-        private System.Windows.Forms.Button RolesButton;
-        private System.Windows.Forms.Button ContractsButton;
-        private System.Windows.Forms.Button EmployeesButton;
-        private System.Windows.Forms.Button WorkHoursButton;
-        private System.Windows.Forms.Button WorkTypesButton;
+        private System.Windows.Forms.ToolStrip tsMain;
+        private System.Windows.Forms.ToolStripButton tsbWorkHours;
+        private System.Windows.Forms.ListView lvMain;
     }
 }
 
