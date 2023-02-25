@@ -11,27 +11,29 @@ namespace Projekt
 {
     internal class SqlRepository
     {
-        string connection;
+        public string Connection { get; set; }
 
         public SqlRepository(string connection)
         {
-            this.connection = connection;
+            this.Connection = connection;
         }
 
         public void Login(string userName, string password)
         { 
-                using (SqlConnection conn = new SqlConnection(connection))
+                using (SqlConnection conn = new SqlConnection(Connection))
                 {
                     conn.Open();
                     using (SqlCommand cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "select * from Users where UserName=@userName";
+                        cmd.CommandText = "select * from Users where UserName=@userName and Password=@password";
                         cmd.Parameters.AddWithValue("userName", userName);
+                        cmd.Parameters.AddWithValue("password", password);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
-                                MessageBox.Show(reader["UserName"].ToString());
+                                //MessageBox.Show("Jste přihlášen jako "+ Convert.ToString(reader["UserName"]));
+
                             }
                         }
                 }

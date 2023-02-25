@@ -9,6 +9,5 @@ namespace Projekt
     internal class User
     {
         public string UserName { get; set; }
-
     }
 }
