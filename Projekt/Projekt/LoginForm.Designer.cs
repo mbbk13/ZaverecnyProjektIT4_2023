@@ -34,6 +34,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -53,7 +54,6 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(243, 22);
             this.tbUserName.TabIndex = 1;
-            this.tbUserName.Text = "vikr";
             // 
             // tbPassword
             // 
@@ -63,7 +63,6 @@
             this.tbPassword.PasswordChar = '۩';
             this.tbPassword.Size = new System.Drawing.Size(243, 22);
             this.tbPassword.TabIndex = 5;
-            this.tbPassword.Text = "JájsemVilém1";
             // 
             // lblPassword
             // 
@@ -86,11 +85,22 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(16, 192);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(100, 28);
+            this.btnRegister.TabIndex = 7;
+            this.btnRegister.Text = "Registrovat";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 234);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.lblPassword);
@@ -112,5 +122,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
