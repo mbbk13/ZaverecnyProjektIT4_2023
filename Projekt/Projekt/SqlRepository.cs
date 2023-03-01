@@ -12,17 +12,15 @@ namespace Projekt
     internal class SqlRepository
     {
         public string Connection { get; set; }
-        byte[] passwordSalt;
-        byte[] passwordHash;
-
 
         public SqlRepository(string connection)
         {
             this.Connection = connection;
         }
 
-        public void Login(string userName, string password)
+        public User GetUser(string userName)
         {
+            User user=null;
                 using (SqlConnection conn = new SqlConnection(Connection))
                 {
                     conn.Open();
@@ -34,16 +32,22 @@ namespace Projekt
                         {
                             if (reader.Read())
                             {
-                                
+                                user = new User(reader["UserName"].ToString(), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
                             }
                         }
                     }
                     conn.Close();
                 }
+            return user;
         }
 
-        public void Register(string userName, string password)
+        /*public void Register(string userName, string password)
         {
+            User = new User();
             using (SqlConnection conn = new SqlConnection(Connection))
             {
                 conn.Open();
@@ -52,32 +56,13 @@ namespace Projekt
                     cmd.CommandText = "insert into Users values(@idEmployee,@userName,Convert(VARBINARY(max),@password),Convert(VARBINARY(max),@passwordSalt))";
                     cmd.Parameters.AddWithValue("userName", userName);
                     cmd.Parameters.AddWithValue("idEmployee", 1);
-                    HashPassword(password);
-                    cmd.Parameters.AddWithValue("password", passwordHash);
-                    cmd.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    User.HashPassword(password);
+                    cmd.Parameters.AddWithValue("password", User.Password);
+                    cmd.Parameters.AddWithValue("passwordSalt", User.PasswordSalt);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
             }
-        }
-
-        private void HashPassword(string password)
-        {
-            using (var hmac = new HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-            }
-        }
-
-        private bool VerifyPassword(string text)
-        {
-            byte[] hash;
-            using (var hmac = new HMACSHA512(passwordSalt))
-            {
-                hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
-            }
-            return hash.SequenceEqual(passwordHash);
-        }
+        }*/
     }
 }

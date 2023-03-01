@@ -12,9 +12,12 @@ namespace Projekt
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public User User { get; set; }
+        public MainForm(User user)
         {
             InitializeComponent();
+            User = user;
+            lblUser.Text = user.UserName;
         }
     }
 }

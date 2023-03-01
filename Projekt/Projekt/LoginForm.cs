@@ -25,7 +25,20 @@ namespace Projekt
         {
             if (tbUserName.Text != "" && tbPassword.Text != "")
             {
-                sqlRepository.Login(tbUserName.Text, tbPassword.Text);
+                User user = sqlRepository.GetUser(tbUserName.Text);
+                if (user != null)
+                {
+                    if(user.VerifyPassword(tbPassword.Text))
+                    {
+                        MainForm mainForm= new MainForm(user);
+                        mainForm.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Uživatel neexistuje!");
+                }
             }
             else
             {
@@ -33,7 +46,7 @@ namespace Projekt
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        /*private void btnRegister_Click(object sender, EventArgs e)
         {
             if (tbUserName.Text != "" && tbPassword.Text != "")
             {
@@ -43,6 +56,6 @@ namespace Projekt
             {
                 MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
             }
-        }
+        }*/
     }
 }

@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Projekt
 {
-    internal class User
+    public class User
     {
+        public string UserName { get; set; }
+        public byte[] Password { get; set; }
+        public byte[] PasswordSalt { get; set; }
+
         public User(string userName, byte[] password, byte[] passwordSalt)
         {
             UserName = userName;
@@ -15,8 +20,28 @@ namespace Projekt
             PasswordSalt = passwordSalt;
         }
 
-        public string UserName { get; set; }
-        public byte[] Password { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public User()
+        {
+
+        }
+
+        /*public void HashPassword(string password)
+        {
+            using (var hmac = new HMACSHA512())
+            {
+                PasswordSalt = hmac.Key;
+                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+            }
+        }*/
+
+        public bool VerifyPassword(string text)
+        {
+            byte[] hash;
+            using (var hmac = new HMACSHA512(PasswordSalt))
+            {
+                hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
+            }
+            return hash.SequenceEqual(Password);
+        }
     }
 }
