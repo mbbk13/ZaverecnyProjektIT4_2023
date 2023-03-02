@@ -93,7 +93,6 @@
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Registrovat";
             this.btnRegister.UseVisualStyleBackColor = true;
-            //this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // LoginForm
             // 
@@ -108,6 +107,7 @@
             this.Controls.Add(this.lblUserName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(298, 281);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);

@@ -12,6 +12,7 @@ namespace Projekt
         public string UserName { get; set; }
         public byte[] Password { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public int IdEmployee { get; set; }
 
         public User(string userName, byte[] password, byte[] passwordSalt)
         {
@@ -20,10 +21,13 @@ namespace Projekt
             PasswordSalt = passwordSalt;
         }
 
-        public User()
+        public User(string userName, int idEmployee)
         {
-
+            IdEmployee = idEmployee;
+            UserName = userName;
         }
+
+
 
         /*public void HashPassword(string password)
         {

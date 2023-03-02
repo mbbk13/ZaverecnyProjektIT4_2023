@@ -13,9 +13,9 @@ namespace Projekt
     {
         public string Connection { get; set; }
 
-        public SqlRepository(string connection)
+        public SqlRepository()
         {
-            this.Connection = connection;
+            Connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='899BAC5729D42BA087F0616BC1630C93_ICKÁ A ZDRAVOTNICKÁ A STŘEDNÍ ŠKOLA BOSKOVICE, PŘÍSPĚVKOVÁ ORGANIZACE\PRG\PROJEKT\PROJEKTDB.MDF';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
         public User GetUser(string userName)
@@ -42,6 +42,28 @@ namespace Projekt
                     }
                     conn.Close();
                 }
+            return user;
+        }
+
+        public List<User> GetUsers(string userName)
+        {
+            List<User> users = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Users";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            users.Add(new User(reader["UserName"].ToString(), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]));
+                        }
+                    }
+                }
+                conn.Close();
+            }
             return user;
         }
 

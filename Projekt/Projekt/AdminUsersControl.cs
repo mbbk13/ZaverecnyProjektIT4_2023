@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace Projekt
 {
-    public partial class MainForm : Form
+    public partial class AdminUsersControl : Form
     {
-        public User User { get; set; }
-        public MainForm(User user)
+        SqlRepository sqlRepository;
+
+        public AdminUsersControl()
         {
             InitializeComponent();
-            User = user;
+            sqlRepository = new SqlRepository();
         }
 
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            
-        }
+
     }
 }
