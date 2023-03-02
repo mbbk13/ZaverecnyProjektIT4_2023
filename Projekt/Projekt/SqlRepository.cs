@@ -58,13 +58,13 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            users.Add(new User(reader["UserName"].ToString(), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]));
+                            users.Add(new User(reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"])));
                         }
                     }
                 }
                 conn.Close();
             }
-            return user;
+            return users;
         }
 
         /*public void Register(string userName, string password)

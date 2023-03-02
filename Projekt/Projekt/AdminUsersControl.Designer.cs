@@ -57,6 +57,7 @@
             // chUserName
             // 
             this.chUserName.Text = "Uživatelské jméno";
+            this.chUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.chUserName.Width = 142;
             // 
             // AdminUsersControl
