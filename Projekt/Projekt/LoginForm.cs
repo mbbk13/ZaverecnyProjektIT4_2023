@@ -34,6 +34,10 @@ namespace Projekt
                         mainForm.Show();
                         this.Hide();
                     }
+                    else
+                    {
+                        MessageBox.Show("Heslo není správné!");
+                    }
                 }
                 else
                 {

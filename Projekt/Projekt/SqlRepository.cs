@@ -45,9 +45,9 @@ namespace Projekt
             return user;
         }
 
-        public List<User> GetUsers(string userName)
+        public List<User> GetUsers()
         {
-            List<User> users = null;
+            List<User> users = new List<User>();
             using (SqlConnection conn = new SqlConnection(Connection))
             {
                 conn.Open();
@@ -65,6 +65,33 @@ namespace Projekt
                 conn.Close();
             }
             return users;
+        }
+
+        public Employee GetEmployee(int idEmployee)
+        {
+            Employee employee = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Employees where IdEmployee=@id";
+                    cmd.Parameters.AddWithValue("id", idEmployee);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            employee = new Employee(reader["FirstName"].ToString(), reader["LastName"].ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Zaměstnanec s takovýmto identifikačním číslem neexistuje!");
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return employee;
         }
 
         /*public void Register(string userName, string password)

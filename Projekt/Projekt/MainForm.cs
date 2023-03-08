@@ -21,7 +21,8 @@ namespace Projekt
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            
+            AdminUsersControl adminUsersControl= new AdminUsersControl();
+            adminUsersControl.ShowDialog();
         }
     }
 }

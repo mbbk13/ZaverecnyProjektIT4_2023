@@ -50,7 +50,7 @@
             // btnRoles
             // 
             this.btnRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRoles.Location = new System.Drawing.Point(199, 12);
+            this.btnRoles.Location = new System.Drawing.Point(231, 12);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(157, 38);
             this.btnRoles.TabIndex = 11;
@@ -60,7 +60,7 @@
             // btnContracts
             // 
             this.btnContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnContracts.Location = new System.Drawing.Point(199, 68);
+            this.btnContracts.Location = new System.Drawing.Point(231, 67);
             this.btnContracts.Name = "btnContracts";
             this.btnContracts.Size = new System.Drawing.Size(157, 38);
             this.btnContracts.TabIndex = 13;
@@ -70,9 +70,9 @@
             // btnEmployees
             // 
             this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEmployees.Location = new System.Drawing.Point(12, 65);
+            this.btnEmployees.Location = new System.Drawing.Point(12, 60);
             this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Size = new System.Drawing.Size(157, 44);
+            this.btnEmployees.Size = new System.Drawing.Size(157, 53);
             this.btnEmployees.TabIndex = 12;
             this.btnEmployees.Text = "Správa zaměstnanců";
             this.btnEmployees.UseVisualStyleBackColor = true;
@@ -80,11 +80,11 @@
             // btnWorkHours
             // 
             this.btnWorkHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWorkHours.Location = new System.Drawing.Point(199, 117);
+            this.btnWorkHours.Location = new System.Drawing.Point(231, 115);
             this.btnWorkHours.Name = "btnWorkHours";
-            this.btnWorkHours.Size = new System.Drawing.Size(157, 45);
+            this.btnWorkHours.Size = new System.Drawing.Size(157, 57);
             this.btnWorkHours.TabIndex = 15;
-            this.btnWorkHours.Text = "Správa odpracovaných hodin";
+            this.btnWorkHours.Text = "Odpracované hodiny";
             this.btnWorkHours.UseVisualStyleBackColor = true;
             // 
             // btnWorkType
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 181);
+            this.ClientSize = new System.Drawing.Size(400, 191);
             this.Controls.Add(this.btnWorkHours);
             this.Controls.Add(this.btnWorkType);
             this.Controls.Add(this.btnContracts);

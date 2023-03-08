@@ -20,6 +20,24 @@ namespace Projekt
             sqlRepository = new SqlRepository();
         }
 
+        private void LoadData()
+        {
+            var users = sqlRepository.GetUsers();
+            foreach (var user in users)
+            {
+                var employee = sqlRepository.GetEmployee(user.IdEmployee);
+                lvAdminUsersControl.Items.Add(new ListViewItem(new string[] { employee.FirstName + " " + employee.LastName, user.UserName }));
+            }
+        }
 
+        private void AdminUsersControl_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnAdminEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
