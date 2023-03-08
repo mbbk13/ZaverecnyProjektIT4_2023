@@ -24,5 +24,10 @@ namespace Projekt
             AdminUsersControl adminUsersControl= new AdminUsersControl();
             adminUsersControl.ShowDialog();
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Parent.Close();
+        }
     }
 }
