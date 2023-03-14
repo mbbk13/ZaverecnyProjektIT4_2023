@@ -45,6 +45,33 @@ namespace Projekt
             return user;
         }
 
+        public User GetUser(int id)
+        {
+            User user = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Users where IdUser=@id";
+                    cmd.Parameters.AddWithValue("id", id);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new User(Convert.ToInt32(reader["IdUser"]), Convert.ToString(reader["UserName"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["Role"]));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return user;
+        }
+
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
@@ -58,13 +85,35 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            users.Add(new User(reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"])));
+                            users.Add(new User(Convert.ToInt32(reader["IdUser"]),reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["Role"])));
                         }
                     }
                 }
                 conn.Close();
             }
             return users;
+        }
+
+        public List<Role> GetRoles()
+        {
+            List<Role> roles = new List<Role>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Roles";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            roles.Add(new Role(reader["Name"].ToString()));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return roles;
         }
 
         public Employee GetEmployee(int idEmployee)
@@ -92,6 +141,94 @@ namespace Projekt
                 conn.Close();
             }
             return employee;
+        }
+
+        public Role GetRole(int idRole)
+        {
+            Role role=null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Roles where IdRole=@id";
+                    cmd.Parameters.AddWithValue("id", idRole);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            role = new Role(reader["Name"].ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Role s takovýmto identifikačním číslem neexistuje!");
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return role;
+        }
+
+        public Role GetRole(string roleName)
+        {
+            Role role = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Roles where Name=@roleName";
+                    cmd.Parameters.AddWithValue("roleName", roleName);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            role = new Role(Convert.ToInt32(reader["IdRole"]));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Role s takovýmto názvem neexistuje!");
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return role;
+        }
+
+        public void UpdateUser(string userName,int idRole,int idUser)
+        {
+            using(SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using(SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Users set UserName=@userName,Role=@idRole where IdUser=@idUser";
+                    cmd.Parameters.AddWithValue("userName",userName);
+                    cmd.Parameters.AddWithValue("idRole", idRole);
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void ResetUserPassword(int idUser, byte[] password, byte[] passwordSalt)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Users set Password=@password,PasswordSalt=@passwordSalt where IdUser=@idUser";
+                    cmd.Parameters.AddWithValue("password", password);
+                    cmd.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
         }
 
         /*public void Register(string userName, string password)

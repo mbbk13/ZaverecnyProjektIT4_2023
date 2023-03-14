@@ -30,7 +30,7 @@ namespace Projekt
                 {
                     if(user.VerifyPassword(tbPassword.Text))
                     {
-                        MainForm mainForm= new MainForm(user);
+                        MainForm mainForm= new MainForm(user,this);
                         mainForm.Show();
                         this.Hide();
                     }

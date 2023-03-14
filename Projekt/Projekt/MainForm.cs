@@ -13,10 +13,12 @@ namespace Projekt
     public partial class MainForm : Form
     {
         public User User { get; set; }
-        public MainForm(User user)
+        public Form Parent { get; set; }
+        public MainForm(User user, Form form)
         {
             InitializeComponent();
             User = user;
+            Parent = form;
         }
 
         private void btnUsers_Click(object sender, EventArgs e)

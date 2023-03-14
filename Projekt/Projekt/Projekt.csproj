@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AdminUsersControl.resx">
@@ -112,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

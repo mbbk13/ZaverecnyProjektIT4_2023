@@ -10,9 +10,11 @@ namespace Projekt
     public class User
     {
         public string UserName { get; set; }
+        public int Role { get; set; }
         public byte[] Password { get; set; }
         public byte[] PasswordSalt { get; set; }
         public int IdEmployee { get; set; }
+        public int Id { get; set; }
 
         public User(string userName, byte[] password, byte[] passwordSalt)
         {
@@ -21,22 +23,22 @@ namespace Projekt
             PasswordSalt = passwordSalt;
         }
 
-        public User(string userName, int idEmployee)
+        public User(int id,string userName, int idEmployee,int role)
         {
             IdEmployee = idEmployee;
             UserName = userName;
+            Id= id;
+            Role = role;
         }
 
-
-
-        /*public void HashPassword(string password)
+        public void ResetPassword()
         {
             using (var hmac = new HMACSHA512())
             {
                 PasswordSalt = hmac.Key;
-                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes("Heslo"));
             }
-        }*/
+        }
 
         public bool VerifyPassword(string text)
         {
