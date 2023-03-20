@@ -16,11 +16,12 @@ namespace Projekt
         public int IdEmployee { get; set; }
         public int Id { get; set; }
 
-        public User(string userName, byte[] password, byte[] passwordSalt)
+        public User(string userName, int id, byte[] password, byte[] passwordSalt)
         {
             UserName = userName;
             Password = password;
             PasswordSalt = passwordSalt;
+            Id=id;
         }
 
         public User(int id,string userName, int idEmployee,int role)
@@ -31,13 +32,18 @@ namespace Projekt
             Role = role;
         }
 
-        public void ResetPassword()
+        private void HashPassword(string password)
         {
             using (var hmac = new HMACSHA512())
             {
                 PasswordSalt = hmac.Key;
-                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes("Heslo"));
+                Password = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
+        }
+
+        public void ResetPassword()
+        {
+            HashPassword("Heslo");
         }
 
         public bool VerifyPassword(string text)
@@ -48,6 +54,11 @@ namespace Projekt
                 hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
             }
             return hash.SequenceEqual(Password);
+        }
+
+        public void ChangePassword(string password)
+        {
+            HashPassword(password);
         }
     }
 }

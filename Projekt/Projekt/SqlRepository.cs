@@ -32,7 +32,7 @@ namespace Projekt
                         {
                             if (reader.Read())
                             {
-                                user = new User(reader["UserName"].ToString(), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]);
+                                user = new User(reader["UserName"].ToString(),Convert.ToInt32(reader["IdUser"]), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]);
                             }
                             else
                             {
@@ -215,6 +215,23 @@ namespace Projekt
         }
 
         public void ResetUserPassword(int idUser, byte[] password, byte[] passwordSalt)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Users set Password=@password,PasswordSalt=@passwordSalt where IdUser=@idUser";
+                    cmd.Parameters.AddWithValue("password", password);
+                    cmd.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void ChangeUserPassword(int idUser, byte[] password, byte[] passwordSalt)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
             {
