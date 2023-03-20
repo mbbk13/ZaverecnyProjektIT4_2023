@@ -1,6 +1,6 @@
 ﻿namespace Projekt
 {
-    partial class AdminUsersEdit
+    partial class AdminUserEdit
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace Projekt
 {
-    partial class MainForm
+    partial class AdminMainForm
     {
         /// <summary>
         /// Vyžaduje se proměnná návrháře.

@@ -92,6 +92,7 @@
             this.btnAdminAdd.TabIndex = 2;
             this.btnAdminAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminAdd.UseVisualStyleBackColor = true;
+            this.btnAdminAdd.Click += new System.EventHandler(this.btnAdminAdd_Click);
             // 
             // btnAdminEdit
             // 

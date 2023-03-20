@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Projekt
 {
-    public partial class MainForm : Form
+    public partial class AdminMainForm : Form
     {
         public User User { get; set; }
         public Form Parent { get; set; }
-        public MainForm(User user, Form form)
+        public AdminMainForm(User user, Form form)
         {
             InitializeComponent();
             User = user;

@@ -41,8 +41,14 @@ namespace Projekt
         {
             //MessageBox.Show(lvAdminUsersControl.SelectedItems[0].SubItems[2].Text);
             var id = Convert.ToInt32(lvAdminUsersControl.SelectedItems[0].SubItems[2].Text);
-            AdminUsersEdit adminUsersEdit=new AdminUsersEdit(id,this);
+            AdminUserEdit adminUsersEdit=new AdminUserEdit(id,this);
             adminUsersEdit.ShowDialog();
+        }
+
+        private void btnAdminAdd_Click(object sender, EventArgs e)
+        {
+            AdminUserAdd adminUserAdd = new AdminUserAdd();
+            adminUserAdd.ShowDialog();
         }
     }
 }

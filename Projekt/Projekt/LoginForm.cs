@@ -30,7 +30,7 @@ namespace Projekt
                 {
                     if(user.VerifyPassword(tbPassword.Text))
                     {
-                        MainForm mainForm= new MainForm(user,this);
+                        AdminMainForm mainForm= new AdminMainForm(user,this);
                         mainForm.Show();
                         this.Hide();
                     }
@@ -50,16 +50,10 @@ namespace Projekt
             }
         }
 
-        /*private void btnRegister_Click(object sender, EventArgs e)
+        private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            if (tbUserName.Text != "" && tbPassword.Text != "")
-            {
-                sqlRepository.Register(tbUserName.Text, tbPassword.Text);
-            }
-            else
-            {
-                MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
-            }
-        }*/
+            ChangePasswordForm changePasswordForm = new ChangePasswordForm();
+            changePasswordForm.ShowDialog();
+        }
     }
 }

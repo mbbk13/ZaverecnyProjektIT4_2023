@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Projekt
 {
-    public partial class AdminUsersEdit : Form
+    public partial class AdminUserEdit : Form
     {
         SqlRepository sqlRepository;
         public int IdUser {get; set; }
         public AdminUsersControl ParentForm { get; set; }
-        public AdminUsersEdit(int idUser, AdminUsersControl parent)
+        public AdminUserEdit(int idUser, AdminUsersControl parent)
         {
             InitializeComponent();
             IdUser = idUser;
