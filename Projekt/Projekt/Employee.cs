@@ -8,13 +8,15 @@ namespace Projekt
 {
     internal class Employee
     {
-        public Employee(string firstName, string lastName)
+        public Employee(int id,string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
+            Id= id;
         }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int Id { get; set; }
     }
 }

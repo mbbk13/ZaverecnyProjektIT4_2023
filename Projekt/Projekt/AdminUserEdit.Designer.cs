@@ -39,36 +39,35 @@
             // lblAdminEditUsername
             // 
             this.lblAdminEditUsername.AutoSize = true;
-            this.lblAdminEditUsername.Location = new System.Drawing.Point(9, 7);
-            this.lblAdminEditUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminEditUsername.Location = new System.Drawing.Point(12, 9);
             this.lblAdminEditUsername.Name = "lblAdminEditUsername";
-            this.lblAdminEditUsername.Size = new System.Drawing.Size(93, 13);
+            this.lblAdminEditUsername.Size = new System.Drawing.Size(117, 16);
             this.lblAdminEditUsername.TabIndex = 0;
             this.lblAdminEditUsername.Text = "Uživatelské jméno";
             // 
             // txtAdminEditUsername
             // 
-            this.txtAdminEditUsername.Location = new System.Drawing.Point(10, 31);
-            this.txtAdminEditUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAdminEditUsername.Location = new System.Drawing.Point(13, 38);
+            this.txtAdminEditUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdminEditUsername.Name = "txtAdminEditUsername";
-            this.txtAdminEditUsername.Size = new System.Drawing.Size(226, 20);
+            this.txtAdminEditUsername.Size = new System.Drawing.Size(300, 22);
             this.txtAdminEditUsername.TabIndex = 1;
             // 
             // lblAdminEditRole
             // 
             this.lblAdminEditRole.AutoSize = true;
-            this.lblAdminEditRole.Location = new System.Drawing.Point(9, 67);
-            this.lblAdminEditRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminEditRole.Location = new System.Drawing.Point(12, 82);
             this.lblAdminEditRole.Name = "lblAdminEditRole";
-            this.lblAdminEditRole.Size = new System.Drawing.Size(29, 13);
+            this.lblAdminEditRole.Size = new System.Drawing.Size(36, 16);
             this.lblAdminEditRole.TabIndex = 2;
             this.lblAdminEditRole.Text = "Role";
             // 
             // btnAdminEditResetPassword
             // 
-            this.btnAdminEditResetPassword.Location = new System.Drawing.Point(10, 134);
+            this.btnAdminEditResetPassword.Location = new System.Drawing.Point(13, 165);
+            this.btnAdminEditResetPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminEditResetPassword.Name = "btnAdminEditResetPassword";
-            this.btnAdminEditResetPassword.Size = new System.Drawing.Size(100, 23);
+            this.btnAdminEditResetPassword.Size = new System.Drawing.Size(133, 28);
             this.btnAdminEditResetPassword.TabIndex = 4;
             this.btnAdminEditResetPassword.Text = "Reset password";
             this.btnAdminEditResetPassword.UseVisualStyleBackColor = true;
@@ -76,9 +75,10 @@
             // 
             // btnAdminEditOK
             // 
-            this.btnAdminEditOK.Location = new System.Drawing.Point(136, 134);
+            this.btnAdminEditOK.Location = new System.Drawing.Point(181, 165);
+            this.btnAdminEditOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminEditOK.Name = "btnAdminEditOK";
-            this.btnAdminEditOK.Size = new System.Drawing.Size(100, 23);
+            this.btnAdminEditOK.Size = new System.Drawing.Size(133, 28);
             this.btnAdminEditOK.TabIndex = 5;
             this.btnAdminEditOK.Text = "OK";
             this.btnAdminEditOK.UseVisualStyleBackColor = true;
@@ -86,26 +86,28 @@
             // 
             // cboRoles
             // 
+            this.cboRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Location = new System.Drawing.Point(10, 84);
+            this.cboRoles.Location = new System.Drawing.Point(13, 103);
+            this.cboRoles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboRoles.Name = "cboRoles";
-            this.cboRoles.Size = new System.Drawing.Size(225, 21);
+            this.cboRoles.Size = new System.Drawing.Size(299, 24);
             this.cboRoles.TabIndex = 6;
             // 
-            // AdminUsersEdit
+            // AdminUserEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 169);
+            this.ClientSize = new System.Drawing.Size(329, 208);
             this.Controls.Add(this.cboRoles);
             this.Controls.Add(this.btnAdminEditOK);
             this.Controls.Add(this.btnAdminEditResetPassword);
             this.Controls.Add(this.lblAdminEditRole);
             this.Controls.Add(this.txtAdminEditUsername);
             this.Controls.Add(this.lblAdminEditUsername);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(237, 208);
-            this.Name = "AdminUsersEdit";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(310, 245);
+            this.Name = "AdminUserEdit";
             this.Text = "Editace uživatele";
             this.Load += new System.EventHandler(this.AdminUsersEdit_Load);
             this.ResumeLayout(false);

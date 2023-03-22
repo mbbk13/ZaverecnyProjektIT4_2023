@@ -32,6 +32,11 @@ namespace Projekt
             Role = role;
         }
 
+        public User(int id)
+        {
+            Id = id;
+        }
+
         private void HashPassword(string password)
         {
             using (var hmac = new HMACSHA512())

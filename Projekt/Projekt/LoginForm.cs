@@ -21,16 +21,16 @@ namespace Projekt
             sqlRepository = new SqlRepository();
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void Login()
         {
             if (tbUserName.Text != "" && tbPassword.Text != "")
             {
                 User user = sqlRepository.GetUser(tbUserName.Text);
                 if (user != null)
                 {
-                    if(user.VerifyPassword(tbPassword.Text))
+                    if (user.VerifyPassword(tbPassword.Text))
                     {
-                        AdminMainForm mainForm= new AdminMainForm(user,this);
+                        AdminMainForm mainForm = new AdminMainForm(user, this);
                         mainForm.Show();
                         this.Hide();
                     }
@@ -48,6 +48,11 @@ namespace Projekt
             {
                 MessageBox.Show("Nevyplnil jste heslo nebo uživatelské jméno!");
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)

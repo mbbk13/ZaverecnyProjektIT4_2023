@@ -39,17 +39,20 @@
             // 
             // cboEmployees
             // 
+            this.cboEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEmployees.FormattingEnabled = true;
-            this.cboEmployees.Location = new System.Drawing.Point(12, 86);
+            this.cboEmployees.Location = new System.Drawing.Point(16, 106);
+            this.cboEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboEmployees.Name = "cboEmployees";
-            this.cboEmployees.Size = new System.Drawing.Size(225, 21);
+            this.cboEmployees.Size = new System.Drawing.Size(299, 24);
             this.cboEmployees.TabIndex = 12;
             // 
             // btnAdminEditOK
             // 
-            this.btnAdminEditOK.Location = new System.Drawing.Point(138, 185);
+            this.btnAdminEditOK.Location = new System.Drawing.Point(184, 228);
+            this.btnAdminEditOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdminEditOK.Name = "btnAdminEditOK";
-            this.btnAdminEditOK.Size = new System.Drawing.Size(100, 23);
+            this.btnAdminEditOK.Size = new System.Drawing.Size(133, 28);
             this.btnAdminEditOK.TabIndex = 11;
             this.btnAdminEditOK.Text = "OK";
             this.btnAdminEditOK.UseVisualStyleBackColor = true;
@@ -57,54 +60,53 @@
             // lblAdminAddEmployee
             // 
             this.lblAdminAddEmployee.AutoSize = true;
-            this.lblAdminAddEmployee.Location = new System.Drawing.Point(11, 69);
-            this.lblAdminAddEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminAddEmployee.Location = new System.Drawing.Point(15, 85);
             this.lblAdminAddEmployee.Name = "lblAdminAddEmployee";
-            this.lblAdminAddEmployee.Size = new System.Drawing.Size(72, 13);
+            this.lblAdminAddEmployee.Size = new System.Drawing.Size(89, 16);
             this.lblAdminAddEmployee.TabIndex = 9;
             this.lblAdminAddEmployee.Text = "Zaměstnanec";
             // 
             // txtAdminAddUsername
             // 
-            this.txtAdminAddUsername.Location = new System.Drawing.Point(12, 33);
-            this.txtAdminAddUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAdminAddUsername.Location = new System.Drawing.Point(16, 41);
+            this.txtAdminAddUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdminAddUsername.Name = "txtAdminAddUsername";
-            this.txtAdminAddUsername.Size = new System.Drawing.Size(226, 20);
+            this.txtAdminAddUsername.Size = new System.Drawing.Size(300, 22);
             this.txtAdminAddUsername.TabIndex = 8;
             // 
             // lblAdminAddUsername
             // 
             this.lblAdminAddUsername.AutoSize = true;
-            this.lblAdminAddUsername.Location = new System.Drawing.Point(11, 9);
-            this.lblAdminAddUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminAddUsername.Location = new System.Drawing.Point(15, 11);
             this.lblAdminAddUsername.Name = "lblAdminAddUsername";
-            this.lblAdminAddUsername.Size = new System.Drawing.Size(93, 13);
+            this.lblAdminAddUsername.Size = new System.Drawing.Size(117, 16);
             this.lblAdminAddUsername.TabIndex = 7;
             this.lblAdminAddUsername.Text = "Uživatelské jméno";
             // 
             // cboRoles
             // 
+            this.cboRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Location = new System.Drawing.Point(12, 142);
+            this.cboRoles.Location = new System.Drawing.Point(16, 175);
+            this.cboRoles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboRoles.Name = "cboRoles";
-            this.cboRoles.Size = new System.Drawing.Size(225, 21);
+            this.cboRoles.Size = new System.Drawing.Size(299, 24);
             this.cboRoles.TabIndex = 14;
             // 
             // lblAdminAddRoles
             // 
             this.lblAdminAddRoles.AutoSize = true;
-            this.lblAdminAddRoles.Location = new System.Drawing.Point(11, 125);
-            this.lblAdminAddRoles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdminAddRoles.Location = new System.Drawing.Point(15, 154);
             this.lblAdminAddRoles.Name = "lblAdminAddRoles";
-            this.lblAdminAddRoles.Size = new System.Drawing.Size(29, 13);
+            this.lblAdminAddRoles.Size = new System.Drawing.Size(36, 16);
             this.lblAdminAddRoles.TabIndex = 13;
             this.lblAdminAddRoles.Text = "Role";
             // 
             // AdminUserAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 220);
+            this.ClientSize = new System.Drawing.Size(331, 271);
             this.Controls.Add(this.cboRoles);
             this.Controls.Add(this.lblAdminAddRoles);
             this.Controls.Add(this.cboEmployees);
@@ -112,9 +114,11 @@
             this.Controls.Add(this.lblAdminAddEmployee);
             this.Controls.Add(this.txtAdminAddUsername);
             this.Controls.Add(this.lblAdminAddUsername);
-            this.MinimumSize = new System.Drawing.Size(264, 259);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(346, 308);
             this.Name = "AdminUserAdd";
             this.Text = "Přidávání uživatele";
+            this.Load += new System.EventHandler(this.AdminUserAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

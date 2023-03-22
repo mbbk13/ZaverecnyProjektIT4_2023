@@ -72,6 +72,36 @@ namespace Projekt
             return user;
         }
 
+        public bool IsUsered(int id)
+        {
+            User user = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Users where IdEmployee=@idEmployee";
+                    cmd.Parameters.AddWithValue("idEmployee", id);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new User(Convert.ToInt32(reader["IdUser"]));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            if (user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
@@ -116,6 +146,28 @@ namespace Projekt
             return roles;
         }
 
+        public List<Employee> GetEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Employees";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            employees.Add(new Employee(Convert.ToInt32(reader["IdEmployee"]),reader["FirstName"].ToString(), reader["LastName"].ToString()));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return employees;
+        }
+
         public Employee GetEmployee(int idEmployee)
         {
             Employee employee = null;
@@ -130,7 +182,7 @@ namespace Projekt
                     {
                         if (reader.Read())
                         {
-                            employee = new Employee(reader["FirstName"].ToString(), reader["LastName"].ToString());
+                            employee = new Employee(Convert.ToInt32(reader["IdEmployee"]),reader["FirstName"].ToString(), reader["LastName"].ToString());
                         }
                         else
                         {
