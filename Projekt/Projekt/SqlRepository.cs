@@ -18,6 +18,25 @@ namespace Projekt
             Connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='899BAC5729D42BA087F0616BC1630C93_ICKÁ A ZDRAVOTNICKÁ A STŘEDNÍ ŠKOLA BOSKOVICE, PŘÍSPĚVKOVÁ ORGANIZACE\PRG\PROJEKT\PROJEKTDB.MDF';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
+        public void AddUser(string userName,int idEmployee, int role, byte[] password, byte[] passwordSalt)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Users values (@idEmployee,@userName,@password,@passwordSalt,@role)";
+                    cmd.Parameters.AddWithValue("userName", userName);
+                    cmd.Parameters.AddWithValue("idEmployee", idEmployee);
+                    cmd.Parameters.AddWithValue("password", password);
+                    cmd.Parameters.AddWithValue("passwordSalt", passwordSalt);
+                    cmd.Parameters.AddWithValue("role", role);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public User GetUser(string userName)
         {
             User user=null;

@@ -56,6 +56,7 @@
             this.btnAdminEditOK.TabIndex = 11;
             this.btnAdminEditOK.Text = "OK";
             this.btnAdminEditOK.UseVisualStyleBackColor = true;
+            this.btnAdminEditOK.Click += new System.EventHandler(this.btnAdminEditOK_Click);
             // 
             // lblAdminAddEmployee
             // 

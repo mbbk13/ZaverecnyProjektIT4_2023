@@ -27,7 +27,7 @@ namespace Projekt
             {
                 if(!sqlRepository.IsUsered(employee.Id))
                 {
-                    cboEmployees.Items.Add(employee.FirstName + " " + employee.LastName);
+                    cboEmployees.Items.Add(employee.FirstName + " " + employee.LastName + " - "+employee.Id);
                 }
             }
             cboRoles.Items.Clear();
@@ -36,6 +36,19 @@ namespace Projekt
             {
                 cboRoles.Items.Add(role.Name);
             }
+        }
+
+        private void btnAdminEditOK_Click(object sender, EventArgs e)
+        {
+            if (txtAdminAddUsername.Text != null && cboEmployees.Text != null && cboRoles.Text != null)
+            {
+                var id = cboEmployees.Text.Split('-');
+                var employee = sqlRepository.GetEmployee(Convert.ToInt32(id[1].Trim()));
+                var user = new User(txtAdminAddUsername.Text, null,);
+                sqlRepository.AddUser();
+            }
+            //var id = cboEmployees.Text.Split('-');
+            //MessageBox.Show("+"+ id[1].Trim());
         }
     }
 }
