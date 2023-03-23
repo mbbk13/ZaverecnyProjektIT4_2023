@@ -43,6 +43,7 @@ namespace Projekt
                 sqlRepository.UpdateUser(txtAdminEditUsername.Text,role.Id,IdUser);
                 ParentForm.LoadData();
                 this.Close();
+                MessageBox.Show("Uživatel úspěšně upraven!");
             }
             else
             {

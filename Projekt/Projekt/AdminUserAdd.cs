@@ -13,10 +13,12 @@ namespace Projekt
     public partial class AdminUserAdd : Form
     {
         SqlRepository sqlRepository;
-        public AdminUserAdd()
+        public AdminUsersControl ParentForm { get; set; }
+        public AdminUserAdd(AdminUsersControl parent)
         {
             InitializeComponent();
             sqlRepository= new SqlRepository();
+            ParentForm= parent;
         }
 
         private void AdminUserAdd_Load(object sender, EventArgs e)
@@ -42,10 +44,16 @@ namespace Projekt
         {
             if (txtAdminAddUsername.Text != null && cboEmployees.Text != null && cboRoles.Text != null)
             {
-                var id = cboEmployees.Text.Split('-');
-                var employee = sqlRepository.GetEmployee(Convert.ToInt32(id[1].Trim()));
-                var user = new User(txtAdminAddUsername.Text, null,);
-                sqlRepository.AddUser();
+                var idEmployee = cboEmployees.Text.Split('-');
+                var user = new User(txtAdminAddUsername.Text);
+                var role = sqlRepository.GetRole(cboRoles.Text);
+                sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee), role.Id,user.Password,user.PasswordSalt);
+                ParentForm.LoadData();
+                Close();
+                MessageBox.Show("Uživatel úspěšně přidán!");
+            }
+            else{
+                MessageBox.Show("Musítě vyplnit všechna pole!");
             }
             //var id = cboEmployees.Text.Split('-');
             //MessageBox.Show("+"+ id[1].Trim());

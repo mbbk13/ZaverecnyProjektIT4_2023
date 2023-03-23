@@ -21,7 +21,7 @@ namespace Projekt
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if(txtChangePassword1.Text != ""&& txtChangePassword2.Text != ""&& txtChangePasswordUsername.Text != "")
+            if(txtChangePassword1.Text != ""&& txtChangePassword2.Text != ""&& txtChangePasswordUsername.Text != ""&&txtChangePasswordCurrentPassword.Text!="")
             {
                 var user = sqlRepository.GetUser(txtChangePasswordUsername.Text);
                 if(user != null)
@@ -30,6 +30,7 @@ namespace Projekt
                     {
                         user.ChangePassword(txtChangePassword2.Text);
                         sqlRepository.ChangeUserPassword(user.Id, user.Password, user.PasswordSalt);
+                        MessageBox.Show("Změna hesla proběhla úspěšně!");
                         this.Close();
                     }
                     else
