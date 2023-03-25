@@ -31,5 +31,11 @@ namespace Projekt
         {
             Parent.Close();
         }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            AdminRolesControl adminRolesControl= new AdminRolesControl();
+            adminRolesControl.ShowDialog();
+        }
     }
 }

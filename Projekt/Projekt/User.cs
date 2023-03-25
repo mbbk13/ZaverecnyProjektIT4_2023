@@ -16,12 +16,13 @@ namespace Projekt
         public int IdEmployee { get; set; }
         public int Id { get; set; }
 
-        public User(string userName, int id, byte[] password, byte[] passwordSalt)
+        public User(string userName, int id, byte[] password, byte[] passwordSalt,int role)
         {
             UserName = userName;
             Password = password;
             PasswordSalt = passwordSalt;
             Id=id;
+            Role = role;
         }
 
         public User(int id,string userName, int idEmployee,int role)

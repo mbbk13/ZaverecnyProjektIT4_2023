@@ -37,6 +37,21 @@ namespace Projekt
             }
         }
 
+        public void DeleteUser(int idUser)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from Users where IdUser=@idUser";
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public User GetUser(string userName)
         {
             User user=null;
@@ -51,7 +66,7 @@ namespace Projekt
                         {
                             if (reader.Read())
                             {
-                                user = new User(reader["UserName"].ToString(),Convert.ToInt32(reader["IdUser"]), (byte[])reader["Password"], (byte[])reader["PasswordSalt"]);
+                                user = new User(reader["UserName"].ToString(),Convert.ToInt32(reader["IdUser"]), (byte[])reader["Password"], (byte[])reader["PasswordSalt"], Convert.ToInt32(reader["Role"]));
                             }
                             else
                             {
@@ -156,7 +171,7 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            roles.Add(new Role(reader["Name"].ToString()));
+                            roles.Add(new Role(reader["Name"].ToString(), Convert.ToInt32(reader["IdRole"])));
                         }
                     }
                 }
@@ -228,7 +243,7 @@ namespace Projekt
                     {
                         if (reader.Read())
                         {
-                            role = new Role(reader["Name"].ToString());
+                            role = new Role(reader["Name"].ToString(),0);
                         }
                         else
                         {
@@ -255,7 +270,7 @@ namespace Projekt
                     {
                         if (reader.Read())
                         {
-                            role = new Role(Convert.ToInt32(reader["IdRole"]));
+                            role = new Role(null,Convert.ToInt32(reader["IdRole"]));
                         }
                         else
                         {

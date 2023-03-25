@@ -30,9 +30,19 @@ namespace Projekt
                 {
                     if (user.VerifyPassword(tbPassword.Text))
                     {
-                        AdminMainForm mainForm = new AdminMainForm(user, this);
-                        mainForm.Show();
-                        this.Hide();
+                        var role = sqlRepository.GetRole(user.Role);
+                        if (role != null&&role.Name!="admin")
+                        {
+                            UserMainForm mainForm = new UserMainForm();
+                            mainForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            AdminMainForm mainForm = new AdminMainForm(user, this);
+                            mainForm.Show();
+                            this.Hide();
+                        }
                     }
                     else
                     {

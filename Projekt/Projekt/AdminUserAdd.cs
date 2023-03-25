@@ -47,7 +47,8 @@ namespace Projekt
                 var idEmployee = cboEmployees.Text.Split('-');
                 var user = new User(txtAdminAddUsername.Text);
                 var role = sqlRepository.GetRole(cboRoles.Text);
-                sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee), role.Id,user.Password,user.PasswordSalt);
+                user.ResetPassword();
+                sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee[1].Trim()), role.Id,user.Password,user.PasswordSalt);
                 ParentForm.LoadData();
                 Close();
                 MessageBox.Show("Uživatel úspěšně přidán!");

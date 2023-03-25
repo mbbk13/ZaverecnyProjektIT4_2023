@@ -39,10 +39,10 @@
             // btnUsers
             // 
             this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUsers.Location = new System.Drawing.Point(9, 10);
-            this.btnUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUsers.Location = new System.Drawing.Point(12, 12);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(118, 31);
+            this.btnUsers.Size = new System.Drawing.Size(157, 38);
             this.btnUsers.TabIndex = 10;
             this.btnUsers.Text = "Správa uživatelů";
             this.btnUsers.UseVisualStyleBackColor = true;
@@ -51,21 +51,22 @@
             // btnRoles
             // 
             this.btnRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRoles.Location = new System.Drawing.Point(173, 10);
-            this.btnRoles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRoles.Location = new System.Drawing.Point(231, 12);
+            this.btnRoles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(118, 31);
+            this.btnRoles.Size = new System.Drawing.Size(157, 38);
             this.btnRoles.TabIndex = 11;
             this.btnRoles.Text = "Správa rolí";
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnContracts
             // 
             this.btnContracts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnContracts.Location = new System.Drawing.Point(173, 54);
-            this.btnContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContracts.Location = new System.Drawing.Point(231, 66);
+            this.btnContracts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContracts.Name = "btnContracts";
-            this.btnContracts.Size = new System.Drawing.Size(118, 31);
+            this.btnContracts.Size = new System.Drawing.Size(157, 38);
             this.btnContracts.TabIndex = 13;
             this.btnContracts.Text = "Správa kontraktů";
             this.btnContracts.UseVisualStyleBackColor = true;
@@ -73,10 +74,10 @@
             // btnEmployees
             // 
             this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEmployees.Location = new System.Drawing.Point(9, 49);
-            this.btnEmployees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmployees.Location = new System.Drawing.Point(12, 60);
+            this.btnEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Size = new System.Drawing.Size(118, 43);
+            this.btnEmployees.Size = new System.Drawing.Size(157, 53);
             this.btnEmployees.TabIndex = 12;
             this.btnEmployees.Text = "Správa zaměstnanců";
             this.btnEmployees.UseVisualStyleBackColor = true;
@@ -84,10 +85,10 @@
             // btnWorkHours
             // 
             this.btnWorkHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWorkHours.Location = new System.Drawing.Point(173, 93);
-            this.btnWorkHours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWorkHours.Location = new System.Drawing.Point(231, 114);
+            this.btnWorkHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWorkHours.Name = "btnWorkHours";
-            this.btnWorkHours.Size = new System.Drawing.Size(118, 46);
+            this.btnWorkHours.Size = new System.Drawing.Size(157, 57);
             this.btnWorkHours.TabIndex = 15;
             this.btnWorkHours.Text = "Odpracované hodiny";
             this.btnWorkHours.UseVisualStyleBackColor = true;
@@ -95,27 +96,28 @@
             // btnWorkType
             // 
             this.btnWorkType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWorkType.Location = new System.Drawing.Point(9, 101);
-            this.btnWorkType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWorkType.Location = new System.Drawing.Point(12, 124);
+            this.btnWorkType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWorkType.Name = "btnWorkType";
-            this.btnWorkType.Size = new System.Drawing.Size(118, 31);
+            this.btnWorkType.Size = new System.Drawing.Size(157, 38);
             this.btnWorkType.TabIndex = 14;
             this.btnWorkType.Text = "Správa prací";
             this.btnWorkType.UseVisualStyleBackColor = true;
             // 
-            // MainForm
+            // AdminMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 155);
+            this.ClientSize = new System.Drawing.Size(400, 191);
             this.Controls.Add(this.btnWorkHours);
             this.Controls.Add(this.btnWorkType);
             this.Controls.Add(this.btnContracts);
             this.Controls.Add(this.btnEmployees);
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnUsers);
-            this.MinimumSize = new System.Drawing.Size(294, 193);
-            this.Name = "MainForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(386, 227);
+            this.Name = "AdminMainForm";
             this.Text = "Main menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.ResumeLayout(false);

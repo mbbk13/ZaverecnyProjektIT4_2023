@@ -8,13 +8,9 @@ namespace Projekt
 {
     public class Role
     {
-        public Role(string name)
+        public Role(string name,int id)
         {
             Name = name;
-        }
-
-        public Role(int id)
-        {
             Id = id;
         }
 
