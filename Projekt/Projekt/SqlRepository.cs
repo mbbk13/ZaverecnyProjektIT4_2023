@@ -37,6 +37,21 @@ namespace Projekt
             }
         }
 
+        public void AddRole(string name)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Roles values (@Name)";
+                    cmd.Parameters.AddWithValue("Name", name);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void DeleteUser(int idUser)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -46,6 +61,21 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Users where IdUser=@idUser";
                     cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void DeleteRole(int idRole)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from Roles where IdRole=@idRole";
+                    cmd.Parameters.AddWithValue("idRole", idRole);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -294,6 +324,22 @@ namespace Projekt
                     cmd.Parameters.AddWithValue("userName",userName);
                     cmd.Parameters.AddWithValue("idRole", idRole);
                     cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void UpdateRole(int idRole, string name)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Roles set Name=@name where IdRole=@idRole";
+                    cmd.Parameters.AddWithValue("Name", name);
+                    cmd.Parameters.AddWithValue("idRole", idRole);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

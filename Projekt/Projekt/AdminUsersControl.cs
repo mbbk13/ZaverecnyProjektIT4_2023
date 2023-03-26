@@ -40,7 +40,7 @@ namespace Projekt
         private void btnAdminEdit_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(lvAdminUsersControl.SelectedItems[0].SubItems[2].Text);
-            if (lvAdminUsersControl.SelectedItems[0].SubItems[2].Text!=null)
+            if (lvAdminUsersControl.SelectedItems.Count > 0)
             {
                 var id = Convert.ToInt32(lvAdminUsersControl.SelectedItems[0].SubItems[2].Text);
                 AdminUserEdit adminUsersEdit = new AdminUserEdit(id, this);
@@ -60,7 +60,7 @@ namespace Projekt
 
         private void btnAdminDelete_Click(object sender, EventArgs e)
         {
-            if (lvAdminUsersControl.SelectedItems[0].SubItems[2].Text != null)
+            if (lvAdminUsersControl.SelectedItems.Count>0)
             {
                 sqlRepository.DeleteUser(Convert.ToInt32(lvAdminUsersControl.SelectedItems[0].SubItems[2].Text));
                 LoadData();

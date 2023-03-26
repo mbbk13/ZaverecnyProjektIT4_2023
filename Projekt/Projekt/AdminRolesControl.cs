@@ -36,7 +36,30 @@ namespace Projekt
 
         private void btnAdminRoleEdit_Click(object sender, EventArgs e)
         {
+            if(lvAdminRolesControl.SelectedItems.Count > 0)
+            {
+                AdminRoleEdit adminRoleEdit = new AdminRoleEdit(Convert.ToInt32(lvAdminRolesControl.SelectedItems[0].SubItems[1].Text),this);
+                adminRoleEdit.ShowDialog();
+            }
+        }
 
+        private void btnAdminRoleAdd_Click(object sender, EventArgs e)
+        {
+            AdminRoleAdd adminRoleAdd = new AdminRoleAdd(this);
+            adminRoleAdd.ShowDialog();
+        }
+
+        private void btnAdminRoleDelete_Click(object sender, EventArgs e)
+        {
+            if (lvAdminRolesControl.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteRole(Convert.ToInt32(lvAdminRolesControl.SelectedItems[0].SubItems[1].Text));
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Nevybral jste žádnou roli!");
+            }
         }
     }
 }

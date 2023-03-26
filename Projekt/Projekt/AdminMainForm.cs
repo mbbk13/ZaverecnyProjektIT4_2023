@@ -37,5 +37,11 @@ namespace Projekt
             AdminRolesControl adminRolesControl= new AdminRolesControl();
             adminRolesControl.ShowDialog();
         }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            AdminEmployeesControl adminEmployeesControl = new AdminEmployeesControl();
+            adminEmployeesControl.ShowDialog();
+        }
     }
 }

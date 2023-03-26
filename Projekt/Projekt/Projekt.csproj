@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminEmployeesControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEmployeesControl.Designer.cs">
+      <DependentUpon>AdminEmployeesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRoleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRoleAdd.Designer.cs">
+      <DependentUpon>AdminRoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRoleEdit.Designer.cs">
+      <DependentUpon>AdminRoleEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminRolesControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +118,15 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminEmployeesControl.resx">
+      <DependentUpon>AdminEmployeesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRoleAdd.resx">
+      <DependentUpon>AdminRoleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRoleEdit.resx">
+      <DependentUpon>AdminRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminRolesControl.resx">
       <DependentUpon>AdminRolesControl.cs</DependentUpon>
     </EmbeddedResource>

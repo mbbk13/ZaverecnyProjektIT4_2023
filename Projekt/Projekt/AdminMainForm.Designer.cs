@@ -81,6 +81,7 @@
             this.btnEmployees.TabIndex = 12;
             this.btnEmployees.Text = "Správa zaměstnanců";
             this.btnEmployees.UseVisualStyleBackColor = true;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnWorkHours
             // 
@@ -115,7 +116,7 @@
             this.Controls.Add(this.btnEmployees);
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnUsers);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(386, 227);
             this.Name = "AdminMainForm";
             this.Text = "Main menu";

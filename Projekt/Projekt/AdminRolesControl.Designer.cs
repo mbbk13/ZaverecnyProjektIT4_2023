@@ -31,8 +31,8 @@
             this.lvAdminRolesControl = new System.Windows.Forms.ListView();
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAdminRoleAdd = new System.Windows.Forms.Button();
             this.btnAdminRoleDelete = new System.Windows.Forms.Button();
+            this.btnAdminRoleAdd = new System.Windows.Forms.Button();
             this.btnAdminRoleEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,30 +65,32 @@
             this.chId.Text = "Id";
             this.chId.Width = 40;
             // 
-            // btnAdminRoleAdd
-            // 
-            this.btnAdminRoleAdd.Image = global::Projekt.Properties.Resources.add;
-            this.btnAdminRoleAdd.Location = new System.Drawing.Point(151, 54);
-            this.btnAdminRoleAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdminRoleAdd.Name = "btnAdminRoleAdd";
-            this.btnAdminRoleAdd.Size = new System.Drawing.Size(75, 36);
-            this.btnAdminRoleAdd.TabIndex = 2;
-            this.btnAdminRoleAdd.UseVisualStyleBackColor = true;
-            // 
             // btnAdminRoleDelete
             // 
             this.btnAdminRoleDelete.Image = global::Projekt.Properties.Resources.bin;
-            this.btnAdminRoleDelete.Location = new System.Drawing.Point(151, 96);
+            this.btnAdminRoleDelete.Location = new System.Drawing.Point(162, 95);
             this.btnAdminRoleDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminRoleDelete.Name = "btnAdminRoleDelete";
             this.btnAdminRoleDelete.Size = new System.Drawing.Size(75, 36);
             this.btnAdminRoleDelete.TabIndex = 3;
             this.btnAdminRoleDelete.UseVisualStyleBackColor = true;
+            this.btnAdminRoleDelete.Click += new System.EventHandler(this.btnAdminRoleDelete_Click);
+            // 
+            // btnAdminRoleAdd
+            // 
+            this.btnAdminRoleAdd.Image = global::Projekt.Properties.Resources.add;
+            this.btnAdminRoleAdd.Location = new System.Drawing.Point(162, 53);
+            this.btnAdminRoleAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminRoleAdd.Name = "btnAdminRoleAdd";
+            this.btnAdminRoleAdd.Size = new System.Drawing.Size(75, 36);
+            this.btnAdminRoleAdd.TabIndex = 2;
+            this.btnAdminRoleAdd.UseVisualStyleBackColor = true;
+            this.btnAdminRoleAdd.Click += new System.EventHandler(this.btnAdminRoleAdd_Click);
             // 
             // btnAdminRoleEdit
             // 
             this.btnAdminRoleEdit.Image = global::Projekt.Properties.Resources.pencil;
-            this.btnAdminRoleEdit.Location = new System.Drawing.Point(151, 12);
+            this.btnAdminRoleEdit.Location = new System.Drawing.Point(162, 11);
             this.btnAdminRoleEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminRoleEdit.Name = "btnAdminRoleEdit";
             this.btnAdminRoleEdit.Size = new System.Drawing.Size(75, 36);
@@ -100,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 290);
+            this.ClientSize = new System.Drawing.Size(260, 290);
             this.Controls.Add(this.btnAdminRoleDelete);
             this.Controls.Add(this.btnAdminRoleAdd);
             this.Controls.Add(this.btnAdminRoleEdit);

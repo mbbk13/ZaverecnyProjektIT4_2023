@@ -30,11 +30,11 @@
         {
             this.cboEmployees = new System.Windows.Forms.ComboBox();
             this.btnAdminEditOK = new System.Windows.Forms.Button();
-            this.lblAdminAddEmployee = new System.Windows.Forms.Label();
-            this.txtAdminAddUsername = new System.Windows.Forms.TextBox();
-            this.lblAdminAddUsername = new System.Windows.Forms.Label();
+            this.lblAdminUserAddEmployee = new System.Windows.Forms.Label();
+            this.txtAdminUserAddUsername = new System.Windows.Forms.TextBox();
+            this.lblAdminUserAddUsername = new System.Windows.Forms.Label();
             this.cboRoles = new System.Windows.Forms.ComboBox();
-            this.lblAdminAddRoles = new System.Windows.Forms.Label();
+            this.lblAdminUserAddRoles = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cboEmployees
@@ -58,31 +58,31 @@
             this.btnAdminEditOK.UseVisualStyleBackColor = true;
             this.btnAdminEditOK.Click += new System.EventHandler(this.btnAdminEditOK_Click);
             // 
-            // lblAdminAddEmployee
+            // lblAdminUserAddEmployee
             // 
-            this.lblAdminAddEmployee.AutoSize = true;
-            this.lblAdminAddEmployee.Location = new System.Drawing.Point(15, 85);
-            this.lblAdminAddEmployee.Name = "lblAdminAddEmployee";
-            this.lblAdminAddEmployee.Size = new System.Drawing.Size(89, 16);
-            this.lblAdminAddEmployee.TabIndex = 9;
-            this.lblAdminAddEmployee.Text = "Zaměstnanec";
+            this.lblAdminUserAddEmployee.AutoSize = true;
+            this.lblAdminUserAddEmployee.Location = new System.Drawing.Point(15, 85);
+            this.lblAdminUserAddEmployee.Name = "lblAdminUserAddEmployee";
+            this.lblAdminUserAddEmployee.Size = new System.Drawing.Size(89, 16);
+            this.lblAdminUserAddEmployee.TabIndex = 9;
+            this.lblAdminUserAddEmployee.Text = "Zaměstnanec";
             // 
-            // txtAdminAddUsername
+            // txtAdminUserAddUsername
             // 
-            this.txtAdminAddUsername.Location = new System.Drawing.Point(16, 41);
-            this.txtAdminAddUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAdminAddUsername.Name = "txtAdminAddUsername";
-            this.txtAdminAddUsername.Size = new System.Drawing.Size(327, 22);
-            this.txtAdminAddUsername.TabIndex = 8;
+            this.txtAdminUserAddUsername.Location = new System.Drawing.Point(16, 41);
+            this.txtAdminUserAddUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAdminUserAddUsername.Name = "txtAdminUserAddUsername";
+            this.txtAdminUserAddUsername.Size = new System.Drawing.Size(327, 22);
+            this.txtAdminUserAddUsername.TabIndex = 8;
             // 
-            // lblAdminAddUsername
+            // lblAdminUserAddUsername
             // 
-            this.lblAdminAddUsername.AutoSize = true;
-            this.lblAdminAddUsername.Location = new System.Drawing.Point(15, 11);
-            this.lblAdminAddUsername.Name = "lblAdminAddUsername";
-            this.lblAdminAddUsername.Size = new System.Drawing.Size(117, 16);
-            this.lblAdminAddUsername.TabIndex = 7;
-            this.lblAdminAddUsername.Text = "Uživatelské jméno";
+            this.lblAdminUserAddUsername.AutoSize = true;
+            this.lblAdminUserAddUsername.Location = new System.Drawing.Point(15, 11);
+            this.lblAdminUserAddUsername.Name = "lblAdminUserAddUsername";
+            this.lblAdminUserAddUsername.Size = new System.Drawing.Size(117, 16);
+            this.lblAdminUserAddUsername.TabIndex = 7;
+            this.lblAdminUserAddUsername.Text = "Uživatelské jméno";
             // 
             // cboRoles
             // 
@@ -94,14 +94,14 @@
             this.cboRoles.Size = new System.Drawing.Size(327, 24);
             this.cboRoles.TabIndex = 14;
             // 
-            // lblAdminAddRoles
+            // lblAdminUserAddRoles
             // 
-            this.lblAdminAddRoles.AutoSize = true;
-            this.lblAdminAddRoles.Location = new System.Drawing.Point(15, 154);
-            this.lblAdminAddRoles.Name = "lblAdminAddRoles";
-            this.lblAdminAddRoles.Size = new System.Drawing.Size(36, 16);
-            this.lblAdminAddRoles.TabIndex = 13;
-            this.lblAdminAddRoles.Text = "Role";
+            this.lblAdminUserAddRoles.AutoSize = true;
+            this.lblAdminUserAddRoles.Location = new System.Drawing.Point(15, 154);
+            this.lblAdminUserAddRoles.Name = "lblAdminUserAddRoles";
+            this.lblAdminUserAddRoles.Size = new System.Drawing.Size(36, 16);
+            this.lblAdminUserAddRoles.TabIndex = 13;
+            this.lblAdminUserAddRoles.Text = "Role";
             // 
             // AdminUserAdd
             // 
@@ -109,12 +109,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 271);
             this.Controls.Add(this.cboRoles);
-            this.Controls.Add(this.lblAdminAddRoles);
+            this.Controls.Add(this.lblAdminUserAddRoles);
             this.Controls.Add(this.cboEmployees);
             this.Controls.Add(this.btnAdminEditOK);
-            this.Controls.Add(this.lblAdminAddEmployee);
-            this.Controls.Add(this.txtAdminAddUsername);
-            this.Controls.Add(this.lblAdminAddUsername);
+            this.Controls.Add(this.lblAdminUserAddEmployee);
+            this.Controls.Add(this.txtAdminUserAddUsername);
+            this.Controls.Add(this.lblAdminUserAddUsername);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(346, 308);
             this.Name = "AdminUserAdd";
@@ -129,10 +129,10 @@
 
         private System.Windows.Forms.ComboBox cboEmployees;
         private System.Windows.Forms.Button btnAdminEditOK;
-        private System.Windows.Forms.Label lblAdminAddEmployee;
-        private System.Windows.Forms.TextBox txtAdminAddUsername;
-        private System.Windows.Forms.Label lblAdminAddUsername;
+        private System.Windows.Forms.Label lblAdminUserAddEmployee;
+        private System.Windows.Forms.TextBox txtAdminUserAddUsername;
+        private System.Windows.Forms.Label lblAdminUserAddUsername;
         private System.Windows.Forms.ComboBox cboRoles;
-        private System.Windows.Forms.Label lblAdminAddRoles;
+        private System.Windows.Forms.Label lblAdminUserAddRoles;
     }
 }

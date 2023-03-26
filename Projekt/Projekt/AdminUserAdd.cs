@@ -42,10 +42,10 @@ namespace Projekt
 
         private void btnAdminEditOK_Click(object sender, EventArgs e)
         {
-            if (txtAdminAddUsername.Text != null && cboEmployees.Text != null && cboRoles.Text != null)
+            if (txtAdminUserAddUsername.Text != null && cboEmployees.Text != null && cboRoles.Text != null)
             {
                 var idEmployee = cboEmployees.Text.Split('-');
-                var user = new User(txtAdminAddUsername.Text);
+                var user = new User(txtAdminUserAddUsername.Text);
                 var role = sqlRepository.GetRole(cboRoles.Text);
                 user.ResetPassword();
                 sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee[1].Trim()), role.Id,user.Password,user.PasswordSalt);
