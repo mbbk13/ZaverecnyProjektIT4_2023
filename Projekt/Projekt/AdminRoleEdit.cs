@@ -36,5 +36,14 @@ namespace Projekt
                 MessageBox.Show("Nezadal jste nové jméno role!");
             }
         }
+
+        private void AdminRoleEdit_Load(object sender, EventArgs e)
+        {
+            var role=sqlRepository.GetRole(IdRole);
+            if (role != null)
+            {
+                txtAdminRoleEditName.Text = role.Name;
+            }
+        }
     }
 }

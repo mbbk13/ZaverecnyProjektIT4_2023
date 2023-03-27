@@ -117,7 +117,8 @@
             this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.btnUsers);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(386, 227);
+            this.MaximumSize = new System.Drawing.Size(418, 238);
+            this.MinimumSize = new System.Drawing.Size(418, 238);
             this.Name = "AdminMainForm";
             this.Text = "Main menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);

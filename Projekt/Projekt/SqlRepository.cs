@@ -223,7 +223,7 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            employees.Add(new Employee(Convert.ToInt32(reader["IdEmployee"]),reader["FirstName"].ToString(), reader["LastName"].ToString()));
+                            employees.Add(new Employee(Convert.ToDateTime(reader["BirthDate"]),reader["FirstName"].ToString(), reader["LastName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), reader["Email"].ToString(), reader["Phone"].ToString()));
                         }
                     }
                 }

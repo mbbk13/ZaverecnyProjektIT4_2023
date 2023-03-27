@@ -50,7 +50,7 @@
             // tbUserName
             // 
             this.tbUserName.Location = new System.Drawing.Point(16, 42);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(243, 22);
             this.tbUserName.TabIndex = 1;
@@ -58,7 +58,7 @@
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(16, 128);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '۩';
             this.tbPassword.Size = new System.Drawing.Size(243, 22);
@@ -77,7 +77,7 @@
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(164, 192);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 6;
@@ -108,8 +108,9 @@
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.lblUserName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(298, 280);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(301, 289);
+            this.MinimumSize = new System.Drawing.Size(301, 289);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);

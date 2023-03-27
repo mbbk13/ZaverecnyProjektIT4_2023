@@ -69,6 +69,7 @@
             this.Controls.Add(this.lblAdminRoleEditName);
             this.Name = "AdminRoleEdit";
             this.Text = "Editace role";
+            this.Load += new System.EventHandler(this.AdminRoleEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
