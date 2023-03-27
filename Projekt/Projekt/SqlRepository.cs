@@ -246,7 +246,7 @@ namespace Projekt
                     {
                         if (reader.Read())
                         {
-                            employee = new Employee(Convert.ToInt32(reader["IdEmployee"]),reader["FirstName"].ToString(), reader["LastName"].ToString());
+                            employee = new Employee((DateTime)reader["BirthDate"],reader["FirstName"].ToString(), reader["LastName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), reader["Email"].ToString(), reader["Phone"].ToString());
                         }
                         else
                         {

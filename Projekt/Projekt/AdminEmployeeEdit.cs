@@ -30,6 +30,7 @@ namespace Projekt
                 txtAdminEmployeeEditEmail.Text = employee.Email;
                 txtAdminEmployeeEditLastname.Text = employee.LastName;
                 txtAdminEmployeeEditPhone.Text = employee.Phone;
+                //MessageBox.Show(employee.BirthDate.ToString());
                 dtpAdminEmployeeEditBirthdate.Value = employee.BirthDate;
             }
         }
