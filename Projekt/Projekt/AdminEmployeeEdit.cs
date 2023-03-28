@@ -13,7 +13,7 @@ namespace Projekt
     public partial class AdminEmployeeEdit : Form
     {
         SqlRepository sqlRepository;
-        public int IdEmployee { get; set; }
+        private int IdEmployee { get; set; }
         public AdminEmployeeEdit(int idEmployee)
         {
             InitializeComponent();

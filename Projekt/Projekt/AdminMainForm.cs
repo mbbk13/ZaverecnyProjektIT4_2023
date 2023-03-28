@@ -12,8 +12,8 @@ namespace Projekt
 {
     public partial class AdminMainForm : Form
     {
-        public User User { get; set; }
-        public Form Parent { get; set; }
+        private User User { get; set; }
+        private Form Parent { get; set; }
         public AdminMainForm(User user, Form form)
         {
             InitializeComponent();

@@ -13,7 +13,7 @@ namespace Projekt
     public partial class AdminRoleAdd : Form
     {
         SqlRepository sqlRepository;
-        public AdminRolesControl AdminRolesControl { get; set; }
+        private AdminRolesControl AdminRolesControl { get; set; }
         public AdminRoleAdd(AdminRolesControl adminRolesControl)
         {
             InitializeComponent();
