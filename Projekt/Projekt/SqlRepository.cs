@@ -37,6 +37,25 @@ namespace Projekt
             }
         }
 
+        public void AddEmployee(string firstName, string lastName, DateTime birthDate, string email, string phone)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Employees values (@firstName,@lastName,@birthDate,@email, @phone)";
+                    cmd.Parameters.AddWithValue("firstName", firstName);
+                    cmd.Parameters.AddWithValue("lastName", lastName);
+                    cmd.Parameters.AddWithValue("birthDate", birthDate);
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("phone", phone);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void AddRole(string name)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -61,6 +80,20 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Users where IdUser=@idUser";
                     cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+        public void DeleteEmployee(int idEmployee)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from Employees where IdEmployee=@idEmployee";
+                    cmd.Parameters.AddWithValue("IdEmployee", idEmployee);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -186,6 +219,51 @@ namespace Projekt
                 conn.Close();
             }
             return users;
+        }
+
+        public List<Contract> GetContracts()
+        {
+            List<Contract> contracts = new List<Contract>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Contracts";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            contracts.Add(new Contract(Convert.ToInt32(reader["IdContract"]), reader["CostumerName"].ToString(), reader["Description"].ToString()));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return contracts;
+        }
+
+        public Contract GetContract(int idContract)
+        {
+            Contract contract = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Contracts where IdContract=@idContract";
+                    cmd.Parameters.Add("idContract", idContract);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            contract=new Contract(Convert.ToInt32(reader["IdContract"]), reader["CostumerName"].ToString(), reader["Description"].ToString());
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return contract;
         }
 
         public List<Role> GetRoles()
@@ -324,6 +402,43 @@ namespace Projekt
                     cmd.Parameters.AddWithValue("userName",userName);
                     cmd.Parameters.AddWithValue("idRole", idRole);
                     cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void UpdateContract(string userName, int idRole, int idUser)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Users set UserName=@userName,Role=@idRole where IdUser=@idUser";
+                    cmd.Parameters.AddWithValue("userName", userName);
+                    cmd.Parameters.AddWithValue("idRole", idRole);
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void UpdateEmployee(int idEmployee,string firstName, string lastName, DateTime birthDate, string email, string phone)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Employees set FirstName=@firstName,LastName=@lastName,BirthDate=@birthDate,Email=@email,Phone=@phone where IdEmployee=@idEmployee";
+                    cmd.Parameters.AddWithValue("firstName", firstName);
+                    cmd.Parameters.AddWithValue("lastName", lastName);
+                    cmd.Parameters.AddWithValue("birthDate", birthDate);
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("phone", phone);
+                    cmd.Parameters.AddWithValue("idEmployee", idEmployee);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

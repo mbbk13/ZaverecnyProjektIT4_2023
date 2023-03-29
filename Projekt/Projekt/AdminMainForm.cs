@@ -43,5 +43,11 @@ namespace Projekt
             AdminEmployeesControl adminEmployeesControl = new AdminEmployeesControl();
             adminEmployeesControl.ShowDialog();
         }
+
+        private void btnContracts_Click(object sender, EventArgs e)
+        {
+            AdminContractControl adminContractControl = new AdminContractControl();
+            adminContractControl.ShowDialog();
+        }
     }
 }

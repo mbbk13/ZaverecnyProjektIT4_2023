@@ -19,7 +19,7 @@ namespace Projekt
             sqlRepository= new SqlRepository();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             var employees= sqlRepository.GetEmployees();
             lvAdminEmployeesControl.Items.Clear();
@@ -38,8 +38,27 @@ namespace Projekt
         {
             if(lvAdminEmployeesControl.SelectedItems.Count> 0)
             {
-                AdminEmployeeEdit adminEmployeeEdit = new AdminEmployeeEdit(Convert.ToInt32(lvAdminEmployeesControl.SelectedItems[0].SubItems[2].Text));
+                AdminEmployeeEdit adminEmployeeEdit = new AdminEmployeeEdit(Convert.ToInt32(lvAdminEmployeesControl.SelectedItems[0].SubItems[2].Text),this);
                 adminEmployeeEdit.ShowDialog();
+            }
+        }
+
+        private void btnAdminUserAdd_Click(object sender, EventArgs e)
+        {
+            AdminEmployeeAdd adminEmployeeAdd = new AdminEmployeeAdd(this);
+            adminEmployeeAdd.ShowDialog();
+        }
+
+        private void btnAdminUserDelete_Click(object sender, EventArgs e)
+        {
+            if (lvAdminEmployeesControl.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteEmployee(Convert.ToInt32(lvAdminEmployeesControl.SelectedItems[0].SubItems[2].Text));
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Nebyl vybrán žádný zaměstnanec!");
             }
         }
     }

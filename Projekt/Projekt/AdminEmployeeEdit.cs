@@ -14,11 +14,13 @@ namespace Projekt
     {
         SqlRepository sqlRepository;
         private int IdEmployee { get; set; }
-        public AdminEmployeeEdit(int idEmployee)
+        public AdminEmployeesControl AdminEmployeesControl { get; set; }
+        public AdminEmployeeEdit(int idEmployee, AdminEmployeesControl adminEmployeesControl)
         {
             InitializeComponent();
             sqlRepository= new SqlRepository();
             IdEmployee = idEmployee;
+            AdminEmployeesControl = adminEmployeesControl;
         }
 
         private void AdminEmployeeEdit_Load(object sender, EventArgs e)
@@ -37,7 +39,15 @@ namespace Projekt
 
         private void btnAdminEmployeeEditOK_Click(object sender, EventArgs e)
         {
-
+            if (txtAdminEmployeeEditEmail.Text != "" && txtAdminEmployeeEditName.Text!="" && txtAdminEmployeeEditLastname.Text != "" && txtAdminEmployeeEditPhone.Text!="")
+            {
+                //MessageBox.Show(dtpAdminEmployeeEditBirthdate.Value.ToString());
+                //var dateBirth = dtpAdminEmployeeEditBirthdate.Value.Date;
+                //MessageBox.Show(dateBirth.ToString());
+                sqlRepository.UpdateEmployee(IdEmployee,txtAdminEmployeeEditName.Text,txtAdminEmployeeEditLastname.Text,dtpAdminEmployeeEditBirthdate.Value,txtAdminEmployeeEditEmail.Text,txtAdminEmployeeEditPhone.Text);
+                AdminEmployeesControl.LoadData();
+                Close();
+            }
         }
     }
 }

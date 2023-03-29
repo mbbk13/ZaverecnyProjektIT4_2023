@@ -70,6 +70,7 @@
             this.btnContracts.TabIndex = 13;
             this.btnContracts.Text = "Správa kontraktů";
             this.btnContracts.UseVisualStyleBackColor = true;
+            this.btnContracts.Click += new System.EventHandler(this.btnContracts_Click);
             // 
             // btnEmployees
             // 

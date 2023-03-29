@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminContractControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminContractControl.Designer.cs">
+      <DependentUpon>AdminContractControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminContractEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminContractEdit.Designer.cs">
+      <DependentUpon>AdminContractEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEmployeeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEmployeeAdd.Designer.cs">
+      <DependentUpon>AdminEmployeeAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminEmployeeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +118,7 @@
     <Compile Include="ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contract.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +143,15 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminContractControl.resx">
+      <DependentUpon>AdminContractControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminContractEdit.resx">
+      <DependentUpon>AdminContractEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEmployeeAdd.resx">
+      <DependentUpon>AdminEmployeeAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminEmployeeEdit.resx">
       <DependentUpon>AdminEmployeeEdit.cs</DependentUpon>
     </EmbeddedResource>

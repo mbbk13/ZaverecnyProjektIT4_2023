@@ -51,6 +51,7 @@
             this.btnAdminUserDelete.TabIndex = 7;
             this.btnAdminUserDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminUserDelete.UseVisualStyleBackColor = true;
+            this.btnAdminUserDelete.Click += new System.EventHandler(this.btnAdminUserDelete_Click);
             // 
             // btnAdminUserAdd
             // 
@@ -63,6 +64,7 @@
             this.btnAdminUserAdd.TabIndex = 6;
             this.btnAdminUserAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminUserAdd.UseVisualStyleBackColor = true;
+            this.btnAdminUserAdd.Click += new System.EventHandler(this.btnAdminUserAdd_Click);
             // 
             // btnAdminEmployeeEdit
             // 
@@ -128,7 +130,7 @@
             // 
             this.chEmployeeEmail.Text = "E-mail";
             this.chEmployeeEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chEmployeeEmail.Width = 90;
+            this.chEmployeeEmail.Width = 100;
             // 
             // chEmployeePhone
             // 
