@@ -50,7 +50,7 @@
             this.lvAdminContractControl.Location = new System.Drawing.Point(0, 0);
             this.lvAdminContractControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvAdminContractControl.Name = "lvAdminContractControl";
-            this.lvAdminContractControl.Size = new System.Drawing.Size(595, 450);
+            this.lvAdminContractControl.Size = new System.Drawing.Size(605, 450);
             this.lvAdminContractControl.TabIndex = 5;
             this.lvAdminContractControl.UseCompatibleStateImageBehavior = false;
             this.lvAdminContractControl.View = System.Windows.Forms.View.Details;
@@ -77,27 +77,29 @@
             // btnAdminContractDelete
             // 
             this.btnAdminContractDelete.Image = global::Projekt.Properties.Resources.bin;
-            this.btnAdminContractDelete.Location = new System.Drawing.Point(619, 95);
+            this.btnAdminContractDelete.Location = new System.Drawing.Point(631, 95);
             this.btnAdminContractDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminContractDelete.Name = "btnAdminContractDelete";
             this.btnAdminContractDelete.Size = new System.Drawing.Size(75, 36);
             this.btnAdminContractDelete.TabIndex = 8;
             this.btnAdminContractDelete.UseVisualStyleBackColor = true;
+            this.btnAdminContractDelete.Click += new System.EventHandler(this.btnAdminContractDelete_Click);
             // 
             // btnAdminContractAdd
             // 
             this.btnAdminContractAdd.Image = global::Projekt.Properties.Resources.add;
-            this.btnAdminContractAdd.Location = new System.Drawing.Point(619, 53);
+            this.btnAdminContractAdd.Location = new System.Drawing.Point(631, 53);
             this.btnAdminContractAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminContractAdd.Name = "btnAdminContractAdd";
             this.btnAdminContractAdd.Size = new System.Drawing.Size(75, 36);
             this.btnAdminContractAdd.TabIndex = 7;
             this.btnAdminContractAdd.UseVisualStyleBackColor = true;
+            this.btnAdminContractAdd.Click += new System.EventHandler(this.btnAdminContractAdd_Click);
             // 
             // btnAdminContractEdit
             // 
             this.btnAdminContractEdit.Image = global::Projekt.Properties.Resources.pencil;
-            this.btnAdminContractEdit.Location = new System.Drawing.Point(619, 11);
+            this.btnAdminContractEdit.Location = new System.Drawing.Point(631, 11);
             this.btnAdminContractEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminContractEdit.Name = "btnAdminContractEdit";
             this.btnAdminContractEdit.Size = new System.Drawing.Size(75, 36);
@@ -109,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 450);
+            this.ClientSize = new System.Drawing.Size(727, 450);
             this.Controls.Add(this.btnAdminContractDelete);
             this.Controls.Add(this.btnAdminContractAdd);
             this.Controls.Add(this.btnAdminContractEdit);

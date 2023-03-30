@@ -28,10 +28,17 @@ namespace Projekt
                 {
                     if (user.VerifyPassword(txtChangePasswordCurrentPassword.Text))
                     {
-                        user.ChangePassword(txtChangePassword2.Text);
-                        sqlRepository.ChangeUserPassword(user.Id, user.Password, user.PasswordSalt);
-                        MessageBox.Show("Změna hesla proběhla úspěšně!");
-                        this.Close();
+                        if(txtChangePassword1.Text==txtChangePassword2.Text)
+                        {
+                            user.ChangePassword(txtChangePassword2.Text);
+                            sqlRepository.ChangeUserPassword(user.Id, user.Password, user.PasswordSalt);
+                            MessageBox.Show("Změna hesla proběhla úspěšně!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hesla se neshodují!");
+                        }
                     }
                     else
                     {

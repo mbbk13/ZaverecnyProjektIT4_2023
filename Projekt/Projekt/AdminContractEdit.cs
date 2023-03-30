@@ -13,12 +13,14 @@ namespace Projekt
     public partial class AdminContractEdit : Form
     {
         SqlRepository sqlRepository;
+        public AdminContractControl Parent { get; set; }
         public int IdContract { get; set; }
-        public AdminContractEdit(int idContract)
+        public AdminContractEdit(int idContract, AdminContractControl parent)
         {
             InitializeComponent();
             IdContract = idContract;
             sqlRepository = new SqlRepository();
+            Parent = parent;
         }
 
         private void AdminContractEdit_Load(object sender, EventArgs e)
@@ -31,6 +33,18 @@ namespace Projekt
             }
         }
 
-
+        private void btnAdminContractEditOK_Click(object sender, EventArgs e)
+        {
+            if(txtAdminContractEditDescription.Text!="" && txtAdminContractEditName.Text != "")
+            {
+                sqlRepository.UpdateContract(IdContract, txtAdminContractEditName.Text, txtAdminContractEditDescription.Text);
+                Parent.LoadData();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
+            }
+        }
     }
 }

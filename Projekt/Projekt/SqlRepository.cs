@@ -37,6 +37,22 @@ namespace Projekt
             }
         }
 
+        public void AddContract(string costumerName,string description)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Contracts values (@costumerName,@description)";
+                    cmd.Parameters.AddWithValue("costumerName", costumerName);
+                    cmd.Parameters.AddWithValue("description", description);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void AddEmployee(string firstName, string lastName, DateTime birthDate, string email, string phone)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -85,6 +101,22 @@ namespace Projekt
                 conn.Close();
             }
         }
+
+        public void DeleteContract(int idContract)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from Contracts where IdContract=@idContract";
+                    cmd.Parameters.AddWithValue("idContract", idContract);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void DeleteEmployee(int idEmployee)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -408,17 +440,17 @@ namespace Projekt
             }
         }
 
-        public void UpdateContract(string userName, int idRole, int idUser)
+        public void UpdateContract(int idContract, string costumerName, string description)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "update Users set UserName=@userName,Role=@idRole where IdUser=@idUser";
-                    cmd.Parameters.AddWithValue("userName", userName);
-                    cmd.Parameters.AddWithValue("idRole", idRole);
-                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.CommandText = "update Contracts set CostumerName=@costumerName, Description=@description where IdContract=@idContract";
+                    cmd.Parameters.AddWithValue("costumerName", costumerName);
+                    cmd.Parameters.AddWithValue("description", description);
+                    cmd.Parameters.AddWithValue("idContract", idContract);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

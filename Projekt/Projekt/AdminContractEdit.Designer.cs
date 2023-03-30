@@ -76,6 +76,7 @@
             this.btnAdminContractEditOK.TabIndex = 5;
             this.btnAdminContractEditOK.Text = "OK";
             this.btnAdminContractEditOK.UseVisualStyleBackColor = true;
+            this.btnAdminContractEditOK.Click += new System.EventHandler(this.btnAdminContractEditOK_Click);
             // 
             // AdminContractEdit
             // 
