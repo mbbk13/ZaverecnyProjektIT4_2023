@@ -76,6 +76,7 @@
             this.btnAdminWorkTypeEditOK.TabIndex = 9;
             this.btnAdminWorkTypeEditOK.Text = "OK";
             this.btnAdminWorkTypeEditOK.UseVisualStyleBackColor = true;
+            this.btnAdminWorkTypeEditOK.Click += new System.EventHandler(this.btnAdminWorkTypeEditOK_Click);
             // 
             // AdminWorkTypeEdit
             // 

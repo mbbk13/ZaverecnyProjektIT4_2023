@@ -30,5 +30,13 @@ namespace Projekt
                 txtAdminWorkTypeEditName.Text = workType.Name;
             }
         }
+
+        private void btnAdminWorkTypeEditOK_Click(object sender, EventArgs e)
+        {
+            if (txtAdminWorkTypeEditName.Text != "" && txtAdminWorkTypeEditDescription.Text != "")
+            {
+                sqlRepository.UpdateWorkType(txtAdminWorkTypeEditName.Text,txtAdminWorkTypeEditDescription.Text,IdWorkType);
+            }
+        }
     }
 }
