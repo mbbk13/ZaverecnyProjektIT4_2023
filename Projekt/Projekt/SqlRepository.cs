@@ -275,6 +275,28 @@ namespace Projekt
             return contracts;
         }
 
+        public List<WorkType> GetWorkTypes()
+        {
+            List<WorkType> workTypes = new List<WorkType>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from WorkTypes";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            workTypes.Add(new WorkType(Convert.ToInt32(reader["IdWorkType"]), reader["Name"].ToString(), reader["Description"].ToString()));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return workTypes;
+        }
+
         public Contract GetContract(int idContract)
         {
             Contract contract = null;
@@ -284,7 +306,7 @@ namespace Projekt
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = "select * from Contracts where IdContract=@idContract";
-                    cmd.Parameters.Add("idContract", idContract);
+                    cmd.Parameters.AddWithValue("idContract", idContract);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -296,6 +318,29 @@ namespace Projekt
                 conn.Close();
             }
             return contract;
+        }
+
+        public WorkType GetWorkType(int idWorkType)
+        {
+            WorkType workType = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from WorkTypes where IdWorkType=@idWorkType";
+                    cmd.Parameters.Add("idWorkType", idWorkType);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            workType = new WorkType(Convert.ToInt32(reader["IdWorkType"]), reader["Name"].ToString(), reader["Description"].ToString());
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return workType;
         }
 
         public List<Role> GetRoles()

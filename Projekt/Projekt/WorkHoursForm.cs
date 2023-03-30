@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Projekt
 {
-    public partial class UserMainForm : Form
+    public partial class WorkHoursForm : Form
     {
-        public UserMainForm()
+        public bool Admin { get; set; }
+        public WorkHoursForm(bool admin)
         {
             InitializeComponent();
+            Admin = admin;
         }
     }
 }

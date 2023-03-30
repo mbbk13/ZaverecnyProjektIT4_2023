@@ -49,5 +49,17 @@ namespace Projekt
             AdminContractControl adminContractControl = new AdminContractControl();
             adminContractControl.ShowDialog();
         }
+
+        private void btnWorkHours_Click(object sender, EventArgs e)
+        {
+            WorkHoursForm workHoursForm = new WorkHoursForm(true);
+            workHoursForm.ShowDialog();
+        }
+
+        private void btnWorkType_Click(object sender, EventArgs e)
+        {
+            AdminWorkTypeControl adminWorkTypeControl = new AdminWorkTypeControl();
+            adminWorkTypeControl.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,147 @@
+﻿namespace Projekt
+{
+    partial class WorkHoursForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnAdminUserDelete = new System.Windows.Forms.Button();
+            this.btnAdminUserAdd = new System.Windows.Forms.Button();
+            this.btnAdminUserEdit = new System.Windows.Forms.Button();
+            this.lvWorkHours = new System.Windows.Forms.ListView();
+            this.chEmployeeName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SuspendLayout();
+            // 
+            // btnAdminUserDelete
+            // 
+            this.btnAdminUserDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdminUserDelete.Image = global::Projekt.Properties.Resources.remove_user;
+            this.btnAdminUserDelete.Location = new System.Drawing.Point(608, 91);
+            this.btnAdminUserDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminUserDelete.Name = "btnAdminUserDelete";
+            this.btnAdminUserDelete.Size = new System.Drawing.Size(75, 34);
+            this.btnAdminUserDelete.TabIndex = 7;
+            this.btnAdminUserDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdminUserDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnAdminUserAdd
+            // 
+            this.btnAdminUserAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdminUserAdd.Image = global::Projekt.Properties.Resources.add_user;
+            this.btnAdminUserAdd.Location = new System.Drawing.Point(608, 51);
+            this.btnAdminUserAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminUserAdd.Name = "btnAdminUserAdd";
+            this.btnAdminUserAdd.Size = new System.Drawing.Size(75, 34);
+            this.btnAdminUserAdd.TabIndex = 6;
+            this.btnAdminUserAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdminUserAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnAdminUserEdit
+            // 
+            this.btnAdminUserEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdminUserEdit.Image = global::Projekt.Properties.Resources.user_edit1;
+            this.btnAdminUserEdit.Location = new System.Drawing.Point(608, 11);
+            this.btnAdminUserEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminUserEdit.Name = "btnAdminUserEdit";
+            this.btnAdminUserEdit.Size = new System.Drawing.Size(75, 34);
+            this.btnAdminUserEdit.TabIndex = 5;
+            this.btnAdminUserEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdminUserEdit.UseVisualStyleBackColor = true;
+            // 
+            // lvWorkHours
+            // 
+            this.lvWorkHours.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chEmployeeName,
+            this.chUserName,
+            this.chId,
+            this.chRole});
+            this.lvWorkHours.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lvWorkHours.FullRowSelect = true;
+            this.lvWorkHours.GridLines = true;
+            this.lvWorkHours.HideSelection = false;
+            this.lvWorkHours.Location = new System.Drawing.Point(0, 0);
+            this.lvWorkHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvWorkHours.Name = "lvWorkHours";
+            this.lvWorkHours.Size = new System.Drawing.Size(584, 450);
+            this.lvWorkHours.TabIndex = 4;
+            this.lvWorkHours.UseCompatibleStateImageBehavior = false;
+            this.lvWorkHours.View = System.Windows.Forms.View.Details;
+            // 
+            // chEmployeeName
+            // 
+            this.chEmployeeName.DisplayIndex = 1;
+            this.chEmployeeName.Text = "Jméno zaměstnance";
+            this.chEmployeeName.Width = 142;
+            // 
+            // chUserName
+            // 
+            this.chUserName.DisplayIndex = 2;
+            this.chUserName.Text = "Uživatelské jméno";
+            this.chUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chUserName.Width = 142;
+            // 
+            // chId
+            // 
+            this.chId.DisplayIndex = 0;
+            this.chId.Text = "Identifikační č.";
+            this.chId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chId.Width = 91;
+            // 
+            // chRole
+            // 
+            this.chRole.Text = "Role";
+            this.chRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // WorkHoursForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(703, 450);
+            this.Controls.Add(this.btnAdminUserDelete);
+            this.Controls.Add(this.btnAdminUserAdd);
+            this.Controls.Add(this.btnAdminUserEdit);
+            this.Controls.Add(this.lvWorkHours);
+            this.Name = "WorkHoursForm";
+            this.Text = "Kontrola odpracovaných hodin";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btnAdminUserDelete;
+        private System.Windows.Forms.Button btnAdminUserAdd;
+        private System.Windows.Forms.Button btnAdminUserEdit;
+        private System.Windows.Forms.ListView lvWorkHours;
+        private System.Windows.Forms.ColumnHeader chEmployeeName;
+        private System.Windows.Forms.ColumnHeader chUserName;
+        private System.Windows.Forms.ColumnHeader chId;
+        private System.Windows.Forms.ColumnHeader chRole;
+    }
+}

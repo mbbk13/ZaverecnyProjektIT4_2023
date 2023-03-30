@@ -118,6 +118,18 @@
     <Compile Include="AdminUserEdit.Designer.cs">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminWorkTypeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeControl.Designer.cs">
+      <DependentUpon>AdminWorkTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWorkTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeEdit.Designer.cs">
+      <DependentUpon>AdminWorkTypeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,12 +155,13 @@
     <Compile Include="Role.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="UserMainForm.cs">
+    <Compile Include="WorkHoursForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserMainForm.Designer.cs">
-      <DependentUpon>UserMainForm.cs</DependentUpon>
+    <Compile Include="WorkHoursForm.Designer.cs">
+      <DependentUpon>WorkHoursForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkType.cs" />
     <EmbeddedResource Include="AdminContractAdd.resx">
       <DependentUpon>AdminContractAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +198,12 @@
     <EmbeddedResource Include="AdminUserEdit.resx">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeControl.resx">
+      <DependentUpon>AdminWorkTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeEdit.resx">
+      <DependentUpon>AdminWorkTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,8 +223,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserMainForm.resx">
-      <DependentUpon>UserMainForm.cs</DependentUpon>
+    <EmbeddedResource Include="WorkHoursForm.resx">
+      <DependentUpon>WorkHoursForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

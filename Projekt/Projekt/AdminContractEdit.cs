@@ -13,7 +13,7 @@ namespace Projekt
     public partial class AdminContractEdit : Form
     {
         SqlRepository sqlRepository;
-        public AdminContractControl Parent { get; set; }
+        public new AdminContractControl Parent { get; set; }
         public int IdContract { get; set; }
         public AdminContractEdit(int idContract, AdminContractControl parent)
         {

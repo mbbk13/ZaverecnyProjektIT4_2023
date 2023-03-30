@@ -94,6 +94,7 @@
             this.btnWorkHours.TabIndex = 15;
             this.btnWorkHours.Text = "Odpracované hodiny";
             this.btnWorkHours.UseVisualStyleBackColor = true;
+            this.btnWorkHours.Click += new System.EventHandler(this.btnWorkHours_Click);
             // 
             // btnWorkType
             // 
@@ -105,6 +106,7 @@
             this.btnWorkType.TabIndex = 14;
             this.btnWorkType.Text = "Správa prací";
             this.btnWorkType.UseVisualStyleBackColor = true;
+            this.btnWorkType.Click += new System.EventHandler(this.btnWorkType_Click);
             // 
             // AdminMainForm
             // 
