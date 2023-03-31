@@ -13,7 +13,7 @@ namespace Projekt
     public partial class AdminUserAdd : Form
     {
         SqlRepository sqlRepository;
-        private AdminUsersControl ParentForm { get; set; }
+        private new AdminUsersControl ParentForm { get; set; }
         public AdminUserAdd(AdminUsersControl parent)
         {
             InitializeComponent();

@@ -297,13 +297,13 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            hours.Add(new Hour(Convert.ToInt32(reader["IdUser"]), reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["Role"])));
+                            hours.Add(new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["Hours"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContract"]), Convert.ToInt32(reader["IdWorkType"]), Convert.ToDateTime(reader["Date"])));
                         }
                     }
                 }
                 conn.Close();
             }
-            return users;
+            return hours;
         }
 
         public List<Contract> GetContracts()

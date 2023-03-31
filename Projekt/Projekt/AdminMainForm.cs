@@ -13,7 +13,7 @@ namespace Projekt
     public partial class AdminMainForm : Form
     {
         private User User { get; set; }
-        private Form Parent { get; set; }
+        private new Form Parent { get; set; }
         public AdminMainForm(User user, Form form)
         {
             InitializeComponent();

@@ -24,9 +24,13 @@ namespace Projekt
         private void WorkHoursForm_Load(object sender, EventArgs e)
         {
             var hours = sqlRepository.GetHours();
-            if(Admin)
+            lvWorkHours.Items.Clear();
+            if (Admin)
             {
-                
+                foreach(var hour in hours)
+                {
+                    lvWorkHours.Items.Add(new ListViewItem(new string[] {sqlRepository.GetEmployee(hour.IdEmployee).FirstName + " " + sqlRepository.GetEmployee(hour.IdEmployee).LastName, hour.IdContract.ToString(),hour.Id.ToString(), }));
+                }
             }
         }
     }
