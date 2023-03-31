@@ -40,30 +40,32 @@
             // btnAdminRoleDelete
             // 
             this.btnAdminRoleDelete.Image = global::Projekt.Properties.Resources.bin;
-            this.btnAdminRoleDelete.Location = new System.Drawing.Point(305, 95);
-            this.btnAdminRoleDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminRoleDelete.Location = new System.Drawing.Point(311, 79);
+            this.btnAdminRoleDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdminRoleDelete.Name = "btnAdminRoleDelete";
-            this.btnAdminRoleDelete.Size = new System.Drawing.Size(75, 36);
+            this.btnAdminRoleDelete.Size = new System.Drawing.Size(56, 29);
             this.btnAdminRoleDelete.TabIndex = 7;
             this.btnAdminRoleDelete.UseVisualStyleBackColor = true;
+            this.btnAdminRoleDelete.Click += new System.EventHandler(this.btnAdminRoleDelete_Click);
             // 
             // btnAdminRoleAdd
             // 
             this.btnAdminRoleAdd.Image = global::Projekt.Properties.Resources.add;
-            this.btnAdminRoleAdd.Location = new System.Drawing.Point(305, 53);
-            this.btnAdminRoleAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminRoleAdd.Location = new System.Drawing.Point(311, 45);
+            this.btnAdminRoleAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdminRoleAdd.Name = "btnAdminRoleAdd";
-            this.btnAdminRoleAdd.Size = new System.Drawing.Size(75, 36);
+            this.btnAdminRoleAdd.Size = new System.Drawing.Size(56, 29);
             this.btnAdminRoleAdd.TabIndex = 6;
             this.btnAdminRoleAdd.UseVisualStyleBackColor = true;
+            this.btnAdminRoleAdd.Click += new System.EventHandler(this.btnAdminRoleAdd_Click);
             // 
             // btnAdminRoleEdit
             // 
             this.btnAdminRoleEdit.Image = global::Projekt.Properties.Resources.pencil;
-            this.btnAdminRoleEdit.Location = new System.Drawing.Point(305, 11);
-            this.btnAdminRoleEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminRoleEdit.Location = new System.Drawing.Point(311, 11);
+            this.btnAdminRoleEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdminRoleEdit.Name = "btnAdminRoleEdit";
-            this.btnAdminRoleEdit.Size = new System.Drawing.Size(75, 36);
+            this.btnAdminRoleEdit.Size = new System.Drawing.Size(56, 29);
             this.btnAdminRoleEdit.TabIndex = 5;
             this.btnAdminRoleEdit.UseVisualStyleBackColor = true;
             this.btnAdminRoleEdit.Click += new System.EventHandler(this.btnAdminRoleEdit_Click);
@@ -79,9 +81,9 @@
             this.lvAdminWorkTypeControl.GridLines = true;
             this.lvAdminWorkTypeControl.HideSelection = false;
             this.lvAdminWorkTypeControl.Location = new System.Drawing.Point(0, 0);
-            this.lvAdminWorkTypeControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvAdminWorkTypeControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvAdminWorkTypeControl.Name = "lvAdminWorkTypeControl";
-            this.lvAdminWorkTypeControl.Size = new System.Drawing.Size(272, 290);
+            this.lvAdminWorkTypeControl.Size = new System.Drawing.Size(295, 236);
             this.lvAdminWorkTypeControl.TabIndex = 4;
             this.lvAdminWorkTypeControl.UseCompatibleStateImageBehavior = false;
             this.lvAdminWorkTypeControl.View = System.Windows.Forms.View.Details;
@@ -90,7 +92,7 @@
             // 
             this.chName.DisplayIndex = 1;
             this.chName.Text = "Název";
-            this.chName.Width = 105;
+            this.chName.Width = 115;
             // 
             // chId
             // 
@@ -101,17 +103,18 @@
             // chDescription
             // 
             this.chDescription.Text = "Popis";
-            this.chDescription.Width = 110;
+            this.chDescription.Width = 120;
             // 
             // AdminWorkTypeControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 290);
+            this.ClientSize = new System.Drawing.Size(387, 236);
             this.Controls.Add(this.btnAdminRoleDelete);
             this.Controls.Add(this.btnAdminRoleAdd);
             this.Controls.Add(this.btnAdminRoleEdit);
             this.Controls.Add(this.lvAdminWorkTypeControl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminWorkTypeControl";
             this.Text = "Správa typů práce";
             this.Load += new System.EventHandler(this.AdminWorkTypeControl_Load);

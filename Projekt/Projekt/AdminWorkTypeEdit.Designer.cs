@@ -37,42 +37,48 @@
             // 
             // txtAdminWorkTypeEditDescription
             // 
-            this.txtAdminWorkTypeEditDescription.Location = new System.Drawing.Point(15, 107);
+            this.txtAdminWorkTypeEditDescription.Location = new System.Drawing.Point(11, 87);
+            this.txtAdminWorkTypeEditDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAdminWorkTypeEditDescription.MaxLength = 200;
             this.txtAdminWorkTypeEditDescription.Name = "txtAdminWorkTypeEditDescription";
-            this.txtAdminWorkTypeEditDescription.Size = new System.Drawing.Size(311, 109);
+            this.txtAdminWorkTypeEditDescription.Size = new System.Drawing.Size(234, 89);
             this.txtAdminWorkTypeEditDescription.TabIndex = 8;
             this.txtAdminWorkTypeEditDescription.Text = "";
             // 
             // lblAdminWorkTypeEditDescription
             // 
             this.lblAdminWorkTypeEditDescription.AutoSize = true;
-            this.lblAdminWorkTypeEditDescription.Location = new System.Drawing.Point(12, 77);
+            this.lblAdminWorkTypeEditDescription.Location = new System.Drawing.Point(9, 63);
+            this.lblAdminWorkTypeEditDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdminWorkTypeEditDescription.Name = "lblAdminWorkTypeEditDescription";
-            this.lblAdminWorkTypeEditDescription.Size = new System.Drawing.Size(94, 16);
+            this.lblAdminWorkTypeEditDescription.Size = new System.Drawing.Size(156, 13);
             this.lblAdminWorkTypeEditDescription.TabIndex = 7;
-            this.lblAdminWorkTypeEditDescription.Text = "Popis zakázky";
+            this.lblAdminWorkTypeEditDescription.Text = "Popis zakázky (max 200 znaků)";
             // 
             // txtAdminWorkTypeEditName
             // 
-            this.txtAdminWorkTypeEditName.Location = new System.Drawing.Point(15, 38);
+            this.txtAdminWorkTypeEditName.Location = new System.Drawing.Point(11, 31);
+            this.txtAdminWorkTypeEditName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdminWorkTypeEditName.Name = "txtAdminWorkTypeEditName";
-            this.txtAdminWorkTypeEditName.Size = new System.Drawing.Size(311, 22);
+            this.txtAdminWorkTypeEditName.Size = new System.Drawing.Size(234, 20);
             this.txtAdminWorkTypeEditName.TabIndex = 6;
             // 
             // lblAdminWorkTypeEditName
             // 
             this.lblAdminWorkTypeEditName.AutoSize = true;
-            this.lblAdminWorkTypeEditName.Location = new System.Drawing.Point(12, 9);
+            this.lblAdminWorkTypeEditName.Location = new System.Drawing.Point(9, 7);
+            this.lblAdminWorkTypeEditName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdminWorkTypeEditName.Name = "lblAdminWorkTypeEditName";
-            this.lblAdminWorkTypeEditName.Size = new System.Drawing.Size(112, 16);
+            this.lblAdminWorkTypeEditName.Size = new System.Drawing.Size(91, 13);
             this.lblAdminWorkTypeEditName.TabIndex = 5;
             this.lblAdminWorkTypeEditName.Text = "Název typu práce";
             // 
             // btnAdminWorkTypeEditOK
             // 
-            this.btnAdminWorkTypeEditOK.Location = new System.Drawing.Point(251, 233);
+            this.btnAdminWorkTypeEditOK.Location = new System.Drawing.Point(188, 189);
+            this.btnAdminWorkTypeEditOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdminWorkTypeEditOK.Name = "btnAdminWorkTypeEditOK";
-            this.btnAdminWorkTypeEditOK.Size = new System.Drawing.Size(75, 32);
+            this.btnAdminWorkTypeEditOK.Size = new System.Drawing.Size(56, 26);
             this.btnAdminWorkTypeEditOK.TabIndex = 9;
             this.btnAdminWorkTypeEditOK.Text = "OK";
             this.btnAdminWorkTypeEditOK.UseVisualStyleBackColor = true;
@@ -80,14 +86,15 @@
             // 
             // AdminWorkTypeEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 277);
+            this.ClientSize = new System.Drawing.Size(254, 225);
             this.Controls.Add(this.btnAdminWorkTypeEditOK);
             this.Controls.Add(this.txtAdminWorkTypeEditDescription);
             this.Controls.Add(this.lblAdminWorkTypeEditDescription);
             this.Controls.Add(this.txtAdminWorkTypeEditName);
             this.Controls.Add(this.lblAdminWorkTypeEditName);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminWorkTypeEdit";
             this.Text = "Editace typu práce";
             this.Load += new System.EventHandler(this.AdminWorkTypeEdit_Load);

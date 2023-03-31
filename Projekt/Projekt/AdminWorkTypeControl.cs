@@ -21,11 +21,16 @@ namespace Projekt
 
         private void AdminWorkTypeControl_Load(object sender, EventArgs e)
         {
-            var workTypes=sqlRepository.GetWorkTypes();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            var workTypes = sqlRepository.GetWorkTypes();
             lvAdminWorkTypeControl.Items.Clear();
             foreach (var workType in workTypes)
             {
-                lvAdminWorkTypeControl.Items.Add(new ListViewItem(new string[] {workType.Name, workType.Id.ToString(), workType.Description} ));
+                lvAdminWorkTypeControl.Items.Add(new ListViewItem(new string[] { workType.Name, workType.Id.ToString(), workType.Description }));
             }
         }
 
@@ -33,8 +38,23 @@ namespace Projekt
         {
             if(lvAdminWorkTypeControl.SelectedItems.Count > 0)
             {
-                AdminWorkTypeEdit adminWorkTypeControlEdit = new AdminWorkTypeEdit(Convert.ToInt32(lvAdminWorkTypeControl.SelectedItems[0].SubItems[1].Text));
+                AdminWorkTypeEdit adminWorkTypeControlEdit = new AdminWorkTypeEdit(Convert.ToInt32(lvAdminWorkTypeControl.SelectedItems[0].SubItems[1].Text),this);
                 adminWorkTypeControlEdit.ShowDialog();
+            }
+        }
+
+        private void btnAdminRoleAdd_Click(object sender, EventArgs e)
+        {
+            AdminWorkTypeAdd adminWrokTypeAdd = new AdminWorkTypeAdd(this);
+            adminWrokTypeAdd.ShowDialog();
+        }
+
+        private void btnAdminRoleDelete_Click(object sender, EventArgs e)
+        {
+            if (lvAdminWorkTypeControl.SelectedItems.Count > 0)
+            {
+                sqlRepository.DeleteWorkType(Convert.ToInt32(lvAdminWorkTypeControl.SelectedItems[0].SubItems[1].Text));
+                LoadData();
             }
         }
     }

@@ -14,11 +14,13 @@ namespace Projekt
     {
         public int IdWorkType { get; set; }
         SqlRepository sqlRepository;
-        public AdminWorkTypeEdit(int idWorkType)
+        public AdminWorkTypeControl AdminWorkTypeControl { get; set; }
+        public AdminWorkTypeEdit(int idWorkType, AdminWorkTypeControl adminWorkTypeControl)
         {
             InitializeComponent();
             IdWorkType = idWorkType;
             sqlRepository= new SqlRepository();
+            AdminWorkTypeControl= adminWorkTypeControl;
         }
 
         private void AdminWorkTypeEdit_Load(object sender, EventArgs e)
@@ -36,6 +38,8 @@ namespace Projekt
             if (txtAdminWorkTypeEditName.Text != "" && txtAdminWorkTypeEditDescription.Text != "")
             {
                 sqlRepository.UpdateWorkType(txtAdminWorkTypeEditName.Text,txtAdminWorkTypeEditDescription.Text,IdWorkType);
+                AdminWorkTypeControl.LoadData();
+                Close();
             }
         }
     }

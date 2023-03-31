@@ -53,6 +53,22 @@ namespace Projekt
             }
         }
 
+        public void AddWorkType(string name, string description)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into WorkTypes values (@name,@description)";
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("description", description);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void AddEmployee(string firstName, string lastName, DateTime birthDate, string email, string phone)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -96,6 +112,21 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Users where IdUser=@idUser";
                     cmd.Parameters.AddWithValue("idUser", idUser);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void DeleteWorkType(int idWork)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from WorkTypes where IdWorkType=@idWorkType";
+                    cmd.Parameters.AddWithValue("idWorkType", idWork);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
@@ -245,6 +276,28 @@ namespace Projekt
                         while (reader.Read())
                         {
                             users.Add(new User(Convert.ToInt32(reader["IdUser"]),reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["Role"])));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return users;
+        }
+
+        public List<Hour> GetHours()
+        {
+            List<Hour> hours = new List<Hour>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "select * from Hours";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            hours.Add(new Hour(Convert.ToInt32(reader["IdUser"]), reader["UserName"].ToString(), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["Role"])));
                         }
                     }
                 }
@@ -532,6 +585,23 @@ namespace Projekt
                     cmd.CommandText = "update Roles set Name=@name where IdRole=@idRole";
                     cmd.Parameters.AddWithValue("Name", name);
                     cmd.Parameters.AddWithValue("idRole", idRole);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void UpdateWorkType(string name,string descrtiption, int idWorkType)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update WorkTypes set Name=@name, Description=@description where IdWorkType=@idWorkType";
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("description", descrtiption);
+                    cmd.Parameters.AddWithValue("idWorkType", idWorkType);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

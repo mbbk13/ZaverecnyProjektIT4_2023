@@ -118,6 +118,12 @@
     <Compile Include="AdminUserEdit.Designer.cs">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminWorkTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminWorkTypeAdd.Designer.cs">
+      <DependentUpon>AdminWorkTypeAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWorkTypeControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,7 @@
     </Compile>
     <Compile Include="Contract.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Hour.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUserEdit.resx">
       <DependentUpon>AdminUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminWorkTypeAdd.resx">
+      <DependentUpon>AdminWorkTypeAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminWorkTypeControl.resx">
       <DependentUpon>AdminWorkTypeControl.cs</DependentUpon>
