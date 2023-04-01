@@ -297,13 +297,59 @@ namespace Projekt
                     {
                         while (reader.Read())
                         {
-                            hours.Add(new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["Hours"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContract"]), Convert.ToInt32(reader["IdWorkType"]), Convert.ToDateTime(reader["Date"])));
+                            hours.Add(new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["AmountOfHours"]), Convert.ToDateTime(reader["Date"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContract"]),Convert.ToInt32(reader["IdWorkType"])));
                         }
                     }
                 }
                 conn.Close();
             }
             return hours;
+        }
+
+        public List<Hour> GetHours(int idUser)
+        {
+            List<Hour> hours = new List<Hour>();
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT [Hours].IdHour,[Hours].IdEmployee,[Hours].[AmountOfHours],[Hours].[Date],[Hours].IdContract,[Hours].IdWorkType FROM [Hours] JOIN Employees ON [Hours].IdEmployee = Employees.IdEmployee JOIN Users ON Employees.IdEmployee = Users.IdEmployee WHERE Users.IdUser = @idUser;";
+                    cmd.Parameters.AddWithValue("idUser", idUser);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            hours.Add(new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["AmountOfHours"]),  Convert.ToDateTime(reader["Date"]), Convert.ToInt32(reader["IdEmployee"]), Convert.ToInt32(reader["IdContract"]), Convert.ToInt32(reader["IdWorkType"])));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return hours;
+        }
+
+        public Hour GetHour(int idHour)
+        {
+            Hour hour = null;
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT * from Hours where IdHour=@idHour";
+                    cmd.Parameters.AddWithValue("idHour", idHour);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            hour=new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["AmountOfHours"]), Convert.ToDateTime(reader["Date"]), Convert.ToInt32(reader["IdEmployee"]),Convert.ToInt32(reader["IdContract"]), Convert.ToInt32(reader["IdWorkType"]));
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return hour;
         }
 
         public List<Contract> GetContracts()
@@ -382,7 +428,7 @@ namespace Projekt
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = "select * from WorkTypes where IdWorkType=@idWorkType";
-                    cmd.Parameters.Add("idWorkType", idWorkType);
+                    cmd.Parameters.AddWithValue("idWorkType", idWorkType);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -602,6 +648,26 @@ namespace Projekt
                     cmd.Parameters.AddWithValue("name", name);
                     cmd.Parameters.AddWithValue("description", descrtiption);
                     cmd.Parameters.AddWithValue("idWorkType", idWorkType);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void UpdateWorkHour(int idHour,int amount,DateTime date, int idEmployee, int idContract, int idWorkType)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "update Hours set AmountOfHours=@amountOfHours,Date=@date,IdEmployee=@idEmployee,IdContract=@idContract,IdWorkType=@idWorkType where IdHour=@idHour";
+                    cmd.Parameters.AddWithValue("amountOfHours", amount);
+                    cmd.Parameters.AddWithValue("date", date);
+                    cmd.Parameters.AddWithValue("idWorkType", idWorkType);
+                    cmd.Parameters.AddWithValue("idEmployee", idEmployee);
+                    cmd.Parameters.AddWithValue("idContract", idContract);
+                    cmd.Parameters.AddWithValue("idHour", idHour);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

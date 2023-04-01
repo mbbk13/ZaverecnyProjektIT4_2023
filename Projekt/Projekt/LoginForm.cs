@@ -33,7 +33,7 @@ namespace Projekt
                         var role = sqlRepository.GetRole(user.Role);
                         if (role != null&&role.Name!="admin")
                         {
-                            WorkHoursForm mainForm = new WorkHoursForm(false);
+                            WorkHoursForm mainForm = new WorkHoursForm(false,user.Id,this);
                             mainForm.Show();
                             this.Hide();
                         }

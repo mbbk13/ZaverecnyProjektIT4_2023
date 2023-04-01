@@ -8,21 +8,22 @@ namespace Projekt
 {
     internal class Hour
     {
-        public Hour(int id, int hours, int idEmployee, int idContract, int idWorkType, DateTime date)
+        public Hour(int id, int amount, DateTime date,int idEmployee,int idContract,int idWorkType)
         {
             Id = id;
-            Hours = hours;
+            Amount = amount;
+            Date = date;
             IdEmployee = idEmployee;
             IdContract = idContract;
             IdWorkType = idWorkType;
-            Date = date;
         }
 
         public int Id { get; set; }
-        public int Hours { get; set; }
-        public int IdEmployee { get; set; }
+        public int Amount { get; set; }
+        public DateTime Date { get; set; }
         public int IdContract { get; set; }
         public int IdWorkType { get; set; }
-        public DateTime Date { get; set; }
+        public int IdEmployee { get; set; }
+
     }
 }

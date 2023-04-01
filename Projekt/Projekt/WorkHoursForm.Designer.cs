@@ -37,13 +37,15 @@
             this.chId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWorkType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chHours = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chContractDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnAdminUserDelete
             // 
             this.btnAdminUserDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserDelete.Image = global::Projekt.Properties.Resources.bin;
-            this.btnAdminUserDelete.Location = new System.Drawing.Point(551, 89);
+            this.btnAdminUserDelete.Location = new System.Drawing.Point(724, 89);
             this.btnAdminUserDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserDelete.Name = "btnAdminUserDelete";
             this.btnAdminUserDelete.Size = new System.Drawing.Size(75, 34);
@@ -55,25 +57,27 @@
             // 
             this.btnAdminUserAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserAdd.Image = global::Projekt.Properties.Resources.add;
-            this.btnAdminUserAdd.Location = new System.Drawing.Point(551, 50);
+            this.btnAdminUserAdd.Location = new System.Drawing.Point(724, 50);
             this.btnAdminUserAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserAdd.Name = "btnAdminUserAdd";
             this.btnAdminUserAdd.Size = new System.Drawing.Size(75, 34);
             this.btnAdminUserAdd.TabIndex = 6;
             this.btnAdminUserAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminUserAdd.UseVisualStyleBackColor = true;
+            this.btnAdminUserAdd.Click += new System.EventHandler(this.btnAdminUserAdd_Click);
             // 
             // btnAdminUserEdit
             // 
             this.btnAdminUserEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserEdit.Image = global::Projekt.Properties.Resources.pencil;
-            this.btnAdminUserEdit.Location = new System.Drawing.Point(551, 11);
+            this.btnAdminUserEdit.Location = new System.Drawing.Point(724, 11);
             this.btnAdminUserEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserEdit.Name = "btnAdminUserEdit";
             this.btnAdminUserEdit.Size = new System.Drawing.Size(75, 34);
             this.btnAdminUserEdit.TabIndex = 5;
             this.btnAdminUserEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminUserEdit.UseVisualStyleBackColor = true;
+            this.btnAdminUserEdit.Click += new System.EventHandler(this.btnAdminUserEdit_Click);
             // 
             // lvWorkHours
             // 
@@ -82,7 +86,9 @@
             this.chNumerOfContract,
             this.chId,
             this.chWorkType,
-            this.chHours});
+            this.chHours,
+            this.chContractDescription,
+            this.chDate});
             this.lvWorkHours.Dock = System.Windows.Forms.DockStyle.Left;
             this.lvWorkHours.FullRowSelect = true;
             this.lvWorkHours.GridLines = true;
@@ -90,7 +96,7 @@
             this.lvWorkHours.Location = new System.Drawing.Point(0, 0);
             this.lvWorkHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvWorkHours.Name = "lvWorkHours";
-            this.lvWorkHours.Size = new System.Drawing.Size(519, 450);
+            this.lvWorkHours.Size = new System.Drawing.Size(698, 450);
             this.lvWorkHours.TabIndex = 4;
             this.lvWorkHours.UseCompatibleStateImageBehavior = false;
             this.lvWorkHours.View = System.Windows.Forms.View.Details;
@@ -127,13 +133,26 @@
             this.chHours.DisplayIndex = 1;
             this.chHours.Text = "Odpracované hodiny";
             this.chHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chHours.Width = 120;
+            this.chHours.Width = 118;
+            // 
+            // chContractDescription
+            // 
+            this.chContractDescription.DisplayIndex = 6;
+            this.chContractDescription.Text = "Popis zakázky";
+            this.chContractDescription.Width = 150;
+            // 
+            // chDate
+            // 
+            this.chDate.DisplayIndex = 5;
+            this.chDate.Text = "Datum";
+            this.chDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chDate.Width = 80;
             // 
             // WorkHoursForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 450);
+            this.ClientSize = new System.Drawing.Size(822, 450);
             this.Controls.Add(this.btnAdminUserDelete);
             this.Controls.Add(this.btnAdminUserAdd);
             this.Controls.Add(this.btnAdminUserEdit);
@@ -141,6 +160,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WorkHoursForm";
             this.Text = "Kontrola odpracovaných hodin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WorkHoursForm_FormClosed);
             this.Load += new System.EventHandler(this.WorkHoursForm_Load);
             this.ResumeLayout(false);
 
@@ -157,5 +177,7 @@
         private System.Windows.Forms.ColumnHeader chId;
         private System.Windows.Forms.ColumnHeader chWorkType;
         private System.Windows.Forms.ColumnHeader chHours;
+        private System.Windows.Forms.ColumnHeader chContractDescription;
+        private System.Windows.Forms.ColumnHeader chDate;
     }
 }

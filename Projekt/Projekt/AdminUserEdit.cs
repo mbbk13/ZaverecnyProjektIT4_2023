@@ -14,7 +14,7 @@ namespace Projekt
     {
         SqlRepository sqlRepository;
         private int IdUser {get; set; }
-        private AdminUsersControl ParentForm { get; set; }
+        private new AdminUsersControl ParentForm { get; set; }
         public AdminUserEdit(int idUser, AdminUsersControl parent)
         {
             InitializeComponent();

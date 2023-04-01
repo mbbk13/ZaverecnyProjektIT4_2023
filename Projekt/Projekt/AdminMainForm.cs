@@ -52,7 +52,7 @@ namespace Projekt
 
         private void btnWorkHours_Click(object sender, EventArgs e)
         {
-            WorkHoursForm workHoursForm = new WorkHoursForm(true);
+            WorkHoursForm workHoursForm = new WorkHoursForm(true,User.Id,null);
             workHoursForm.ShowDialog();
         }
 
