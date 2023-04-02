@@ -27,6 +27,7 @@ namespace Projekt
 
         private void WorkHourEdit_Load(object sender, EventArgs e)
         {
+            dtpWorkHoursEditDate.MaxDate=DateTime.Now;
             var hour = sqlRepository.GetHour(IdHour);
             var contracts = sqlRepository.GetContracts();
             var workTypes = sqlRepository.GetWorkTypes();

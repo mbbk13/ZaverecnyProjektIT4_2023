@@ -69,6 +69,25 @@ namespace Projekt
             }
         }
 
+        public void AddWorkHour(int amount,DateTime date,int idEmployee,int idContract,int idWorkType)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "insert into Hours values (@amount,@date,@idEmployee,@idContract,@idWorkType)";
+                    cmd.Parameters.AddWithValue("amount", amount);
+                    cmd.Parameters.AddWithValue("date", date);
+                    cmd.Parameters.AddWithValue("idEmployee", idEmployee);
+                    cmd.Parameters.AddWithValue("idContract", idContract);
+                    cmd.Parameters.AddWithValue("idWorkType", idWorkType);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
         public void AddEmployee(string firstName, string lastName, DateTime birthDate, string email, string phone)
         {
             using (SqlConnection conn = new SqlConnection(Connection))
@@ -127,6 +146,21 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from WorkTypes where IdWorkType=@idWorkType";
                     cmd.Parameters.AddWithValue("idWorkType", idWork);
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+        }
+
+        public void DeleteWorkHour(int idHour)
+        {
+            using (SqlConnection conn = new SqlConnection(Connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "delete from Hours where IdHour=@idHour";
+                    cmd.Parameters.AddWithValue("idHour", idHour);
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

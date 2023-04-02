@@ -83,13 +83,36 @@ namespace Projekt
 
         private void WorkHoursForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Parent.Close();
+            if (!Admin)
+            {
+                Parent.Close();
+            }
         }
 
         private void btnAdminUserAdd_Click(object sender, EventArgs e)
         {
-            WorkHourAdd workHourAdd = new WorkHourAdd(Admin,this);
+            WorkHourAdd workHourAdd = new WorkHourAdd(Admin,this,IdUser);
             workHourAdd.ShowDialog();
+        }
+
+        private void btnAdminUserDelete_Click(object sender, EventArgs e)
+        {
+            if(lvWorkHours.SelectedItems.Count > 0)
+            {
+                if (!Admin && Convert.ToDateTime(lvWorkHours.SelectedItems[0].SubItems[6].Text).Date == DateTime.Now.Date)
+                {
+                    sqlRepository.DeleteWorkHour(Convert.ToInt32(lvWorkHours.SelectedItems[0].SubItems[2].Text));
+                }
+                else if (Admin)
+                {
+                    sqlRepository.DeleteWorkHour(Convert.ToInt32(lvWorkHours.SelectedItems[0].SubItems[2].Text));
+                }
+                else
+                {
+                    MessageBox.Show("Nevybral jste žádný/platný záznam!");
+                }
+                LoadData();
+            }
         }
     }
 }

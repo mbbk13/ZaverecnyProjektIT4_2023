@@ -26,7 +26,7 @@ namespace Projekt
             var contracts = sqlRepository.GetContracts();
             foreach (var contract in contracts)
             {
-                lvAdminContractControl.Items.Add(new ListViewItem(new string[] { contract.CostumerName, contract.Description, contract.Id.ToString() }));
+               lvAdminContractControl.Items.Add(new ListViewItem(new string[] { contract.CostumerName, contract.Description, contract.Id.ToString() }));
             }
         }
 

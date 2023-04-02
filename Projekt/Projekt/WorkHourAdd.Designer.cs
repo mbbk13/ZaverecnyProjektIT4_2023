@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.nWorkHoursAddAmount = new System.Windows.Forms.NumericUpDown();
-            this.cbWorkHoursEditWorkType = new System.Windows.Forms.ComboBox();
-            this.lblWorkHoursEditWorkType = new System.Windows.Forms.Label();
-            this.cbWorkHoursEditContract = new System.Windows.Forms.ComboBox();
-            this.cboWorkHoursEditEmployees = new System.Windows.Forms.ComboBox();
-            this.btnAdminEmployeeEditOK = new System.Windows.Forms.Button();
-            this.lblWorkHoursEditContract = new System.Windows.Forms.Label();
-            this.lblWorkHoursEditEmployee = new System.Windows.Forms.Label();
+            this.cbWorkHoursAddWorkType = new System.Windows.Forms.ComboBox();
+            this.lblWorkHoursAddWorkType = new System.Windows.Forms.Label();
+            this.cbWorkHoursAddContract = new System.Windows.Forms.ComboBox();
+            this.cboWorkHoursAddEmployees = new System.Windows.Forms.ComboBox();
+            this.btnWorkHourAddOK = new System.Windows.Forms.Button();
+            this.lblWorkHoursAddContract = new System.Windows.Forms.Label();
+            this.lblWorkHoursAddEmployee = new System.Windows.Forms.Label();
             this.lblWorkHoursAddAmount = new System.Windows.Forms.Label();
             this.dtpWorkHoursAddDate = new System.Windows.Forms.DateTimePicker();
             this.lblWorkHoursAddDate = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             0,
             0});
             this.nWorkHoursAddAmount.Name = "nWorkHoursAddAmount";
-            this.nWorkHoursAddAmount.Size = new System.Drawing.Size(344, 22);
+            this.nWorkHoursAddAmount.Size = new System.Drawing.Size(349, 22);
             this.nWorkHoursAddAmount.TabIndex = 40;
             this.nWorkHoursAddAmount.Value = new decimal(new int[] {
             1,
@@ -64,71 +64,72 @@
             0,
             0});
             // 
-            // cbWorkHoursEditWorkType
+            // cbWorkHoursAddWorkType
             // 
-            this.cbWorkHoursEditWorkType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbWorkHoursEditWorkType.FormattingEnabled = true;
-            this.cbWorkHoursEditWorkType.Location = new System.Drawing.Point(10, 271);
-            this.cbWorkHoursEditWorkType.Margin = new System.Windows.Forms.Padding(4);
-            this.cbWorkHoursEditWorkType.Name = "cbWorkHoursEditWorkType";
-            this.cbWorkHoursEditWorkType.Size = new System.Drawing.Size(351, 24);
-            this.cbWorkHoursEditWorkType.TabIndex = 39;
+            this.cbWorkHoursAddWorkType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWorkHoursAddWorkType.FormattingEnabled = true;
+            this.cbWorkHoursAddWorkType.Location = new System.Drawing.Point(10, 271);
+            this.cbWorkHoursAddWorkType.Margin = new System.Windows.Forms.Padding(4);
+            this.cbWorkHoursAddWorkType.Name = "cbWorkHoursAddWorkType";
+            this.cbWorkHoursAddWorkType.Size = new System.Drawing.Size(351, 24);
+            this.cbWorkHoursAddWorkType.TabIndex = 39;
             // 
-            // lblWorkHoursEditWorkType
+            // lblWorkHoursAddWorkType
             // 
-            this.lblWorkHoursEditWorkType.AutoSize = true;
-            this.lblWorkHoursEditWorkType.Location = new System.Drawing.Point(10, 245);
-            this.lblWorkHoursEditWorkType.Name = "lblWorkHoursEditWorkType";
-            this.lblWorkHoursEditWorkType.Size = new System.Drawing.Size(134, 16);
-            this.lblWorkHoursEditWorkType.TabIndex = 38;
-            this.lblWorkHoursEditWorkType.Text = "Typ odvedené práce";
+            this.lblWorkHoursAddWorkType.AutoSize = true;
+            this.lblWorkHoursAddWorkType.Location = new System.Drawing.Point(10, 245);
+            this.lblWorkHoursAddWorkType.Name = "lblWorkHoursAddWorkType";
+            this.lblWorkHoursAddWorkType.Size = new System.Drawing.Size(134, 16);
+            this.lblWorkHoursAddWorkType.TabIndex = 38;
+            this.lblWorkHoursAddWorkType.Text = "Typ odvedené práce";
             // 
-            // cbWorkHoursEditContract
+            // cbWorkHoursAddContract
             // 
-            this.cbWorkHoursEditContract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbWorkHoursEditContract.FormattingEnabled = true;
-            this.cbWorkHoursEditContract.Location = new System.Drawing.Point(10, 211);
-            this.cbWorkHoursEditContract.Margin = new System.Windows.Forms.Padding(4);
-            this.cbWorkHoursEditContract.Name = "cbWorkHoursEditContract";
-            this.cbWorkHoursEditContract.Size = new System.Drawing.Size(351, 24);
-            this.cbWorkHoursEditContract.TabIndex = 37;
+            this.cbWorkHoursAddContract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWorkHoursAddContract.FormattingEnabled = true;
+            this.cbWorkHoursAddContract.Location = new System.Drawing.Point(10, 211);
+            this.cbWorkHoursAddContract.Margin = new System.Windows.Forms.Padding(4);
+            this.cbWorkHoursAddContract.Name = "cbWorkHoursAddContract";
+            this.cbWorkHoursAddContract.Size = new System.Drawing.Size(351, 24);
+            this.cbWorkHoursAddContract.TabIndex = 37;
             // 
-            // cboWorkHoursEditEmployees
+            // cboWorkHoursAddEmployees
             // 
-            this.cboWorkHoursEditEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboWorkHoursEditEmployees.FormattingEnabled = true;
-            this.cboWorkHoursEditEmployees.Location = new System.Drawing.Point(11, 151);
-            this.cboWorkHoursEditEmployees.Margin = new System.Windows.Forms.Padding(4);
-            this.cboWorkHoursEditEmployees.Name = "cboWorkHoursEditEmployees";
-            this.cboWorkHoursEditEmployees.Size = new System.Drawing.Size(351, 24);
-            this.cboWorkHoursEditEmployees.TabIndex = 36;
+            this.cboWorkHoursAddEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboWorkHoursAddEmployees.FormattingEnabled = true;
+            this.cboWorkHoursAddEmployees.Location = new System.Drawing.Point(11, 151);
+            this.cboWorkHoursAddEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.cboWorkHoursAddEmployees.Name = "cboWorkHoursAddEmployees";
+            this.cboWorkHoursAddEmployees.Size = new System.Drawing.Size(351, 24);
+            this.cboWorkHoursAddEmployees.TabIndex = 36;
             // 
-            // btnAdminEmployeeEditOK
+            // btnWorkHourAddOK
             // 
-            this.btnAdminEmployeeEditOK.Location = new System.Drawing.Point(289, 318);
-            this.btnAdminEmployeeEditOK.Name = "btnAdminEmployeeEditOK";
-            this.btnAdminEmployeeEditOK.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminEmployeeEditOK.TabIndex = 35;
-            this.btnAdminEmployeeEditOK.Text = "OK";
-            this.btnAdminEmployeeEditOK.UseVisualStyleBackColor = true;
+            this.btnWorkHourAddOK.Location = new System.Drawing.Point(289, 318);
+            this.btnWorkHourAddOK.Name = "btnWorkHourAddOK";
+            this.btnWorkHourAddOK.Size = new System.Drawing.Size(75, 23);
+            this.btnWorkHourAddOK.TabIndex = 35;
+            this.btnWorkHourAddOK.Text = "OK";
+            this.btnWorkHourAddOK.UseVisualStyleBackColor = true;
+            this.btnWorkHourAddOK.Click += new System.EventHandler(this.btnWorkHourAddOK_Click);
             // 
-            // lblWorkHoursEditContract
+            // lblWorkHoursAddContract
             // 
-            this.lblWorkHoursEditContract.AutoSize = true;
-            this.lblWorkHoursEditContract.Location = new System.Drawing.Point(10, 185);
-            this.lblWorkHoursEditContract.Name = "lblWorkHoursEditContract";
-            this.lblWorkHoursEditContract.Size = new System.Drawing.Size(59, 16);
-            this.lblWorkHoursEditContract.TabIndex = 34;
-            this.lblWorkHoursEditContract.Text = "Zakázka";
+            this.lblWorkHoursAddContract.AutoSize = true;
+            this.lblWorkHoursAddContract.Location = new System.Drawing.Point(10, 185);
+            this.lblWorkHoursAddContract.Name = "lblWorkHoursAddContract";
+            this.lblWorkHoursAddContract.Size = new System.Drawing.Size(59, 16);
+            this.lblWorkHoursAddContract.TabIndex = 34;
+            this.lblWorkHoursAddContract.Text = "Zakázka";
             // 
-            // lblWorkHoursEditEmployee
+            // lblWorkHoursAddEmployee
             // 
-            this.lblWorkHoursEditEmployee.AutoSize = true;
-            this.lblWorkHoursEditEmployee.Location = new System.Drawing.Point(10, 125);
-            this.lblWorkHoursEditEmployee.Name = "lblWorkHoursEditEmployee";
-            this.lblWorkHoursEditEmployee.Size = new System.Drawing.Size(89, 16);
-            this.lblWorkHoursEditEmployee.TabIndex = 33;
-            this.lblWorkHoursEditEmployee.Text = "Zaměstnanec";
+            this.lblWorkHoursAddEmployee.AutoSize = true;
+            this.lblWorkHoursAddEmployee.Location = new System.Drawing.Point(10, 125);
+            this.lblWorkHoursAddEmployee.Name = "lblWorkHoursAddEmployee";
+            this.lblWorkHoursAddEmployee.Size = new System.Drawing.Size(89, 16);
+            this.lblWorkHoursAddEmployee.TabIndex = 33;
+            this.lblWorkHoursAddEmployee.Text = "Zaměstnanec";
             // 
             // lblWorkHoursAddAmount
             // 
@@ -162,13 +163,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 353);
             this.Controls.Add(this.nWorkHoursAddAmount);
-            this.Controls.Add(this.cbWorkHoursEditWorkType);
-            this.Controls.Add(this.lblWorkHoursEditWorkType);
-            this.Controls.Add(this.cbWorkHoursEditContract);
-            this.Controls.Add(this.cboWorkHoursEditEmployees);
-            this.Controls.Add(this.btnAdminEmployeeEditOK);
-            this.Controls.Add(this.lblWorkHoursEditContract);
-            this.Controls.Add(this.lblWorkHoursEditEmployee);
+            this.Controls.Add(this.cbWorkHoursAddWorkType);
+            this.Controls.Add(this.lblWorkHoursAddWorkType);
+            this.Controls.Add(this.cbWorkHoursAddContract);
+            this.Controls.Add(this.cboWorkHoursAddEmployees);
+            this.Controls.Add(this.btnWorkHourAddOK);
+            this.Controls.Add(this.lblWorkHoursAddContract);
+            this.Controls.Add(this.lblWorkHoursAddEmployee);
             this.Controls.Add(this.dtpWorkHoursAddDate);
             this.Controls.Add(this.lblWorkHoursAddDate);
             this.Controls.Add(this.lblWorkHoursAddAmount);
@@ -184,13 +185,13 @@
         #endregion
 
         private System.Windows.Forms.NumericUpDown nWorkHoursAddAmount;
-        private System.Windows.Forms.ComboBox cbWorkHoursEditWorkType;
-        private System.Windows.Forms.Label lblWorkHoursEditWorkType;
-        private System.Windows.Forms.ComboBox cbWorkHoursEditContract;
-        private System.Windows.Forms.ComboBox cboWorkHoursEditEmployees;
-        private System.Windows.Forms.Button btnAdminEmployeeEditOK;
-        private System.Windows.Forms.Label lblWorkHoursEditContract;
-        private System.Windows.Forms.Label lblWorkHoursEditEmployee;
+        private System.Windows.Forms.ComboBox cbWorkHoursAddWorkType;
+        private System.Windows.Forms.Label lblWorkHoursAddWorkType;
+        private System.Windows.Forms.ComboBox cbWorkHoursAddContract;
+        private System.Windows.Forms.ComboBox cboWorkHoursAddEmployees;
+        private System.Windows.Forms.Button btnWorkHourAddOK;
+        private System.Windows.Forms.Label lblWorkHoursAddContract;
+        private System.Windows.Forms.Label lblWorkHoursAddEmployee;
         private System.Windows.Forms.Label lblWorkHoursAddAmount;
         private System.Windows.Forms.DateTimePicker dtpWorkHoursAddDate;
         private System.Windows.Forms.Label lblWorkHoursAddDate;

@@ -45,19 +45,20 @@
             // 
             this.btnAdminUserDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserDelete.Image = global::Projekt.Properties.Resources.bin;
-            this.btnAdminUserDelete.Location = new System.Drawing.Point(724, 89);
+            this.btnAdminUserDelete.Location = new System.Drawing.Point(757, 89);
             this.btnAdminUserDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserDelete.Name = "btnAdminUserDelete";
             this.btnAdminUserDelete.Size = new System.Drawing.Size(75, 34);
             this.btnAdminUserDelete.TabIndex = 7;
             this.btnAdminUserDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdminUserDelete.UseVisualStyleBackColor = true;
+            this.btnAdminUserDelete.Click += new System.EventHandler(this.btnAdminUserDelete_Click);
             // 
             // btnAdminUserAdd
             // 
             this.btnAdminUserAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserAdd.Image = global::Projekt.Properties.Resources.add;
-            this.btnAdminUserAdd.Location = new System.Drawing.Point(724, 50);
+            this.btnAdminUserAdd.Location = new System.Drawing.Point(757, 50);
             this.btnAdminUserAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserAdd.Name = "btnAdminUserAdd";
             this.btnAdminUserAdd.Size = new System.Drawing.Size(75, 34);
@@ -70,7 +71,7 @@
             // 
             this.btnAdminUserEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdminUserEdit.Image = global::Projekt.Properties.Resources.pencil;
-            this.btnAdminUserEdit.Location = new System.Drawing.Point(724, 11);
+            this.btnAdminUserEdit.Location = new System.Drawing.Point(757, 11);
             this.btnAdminUserEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdminUserEdit.Name = "btnAdminUserEdit";
             this.btnAdminUserEdit.Size = new System.Drawing.Size(75, 34);
@@ -96,7 +97,7 @@
             this.lvWorkHours.Location = new System.Drawing.Point(0, 0);
             this.lvWorkHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvWorkHours.Name = "lvWorkHours";
-            this.lvWorkHours.Size = new System.Drawing.Size(698, 450);
+            this.lvWorkHours.Size = new System.Drawing.Size(726, 450);
             this.lvWorkHours.TabIndex = 4;
             this.lvWorkHours.UseCompatibleStateImageBehavior = false;
             this.lvWorkHours.View = System.Windows.Forms.View.Details;
@@ -152,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.ClientSize = new System.Drawing.Size(853, 450);
             this.Controls.Add(this.btnAdminUserDelete);
             this.Controls.Add(this.btnAdminUserAdd);
             this.Controls.Add(this.btnAdminUserEdit);

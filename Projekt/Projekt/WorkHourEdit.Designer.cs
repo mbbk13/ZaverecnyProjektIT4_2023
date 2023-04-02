@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdminEmployeeEditOK = new System.Windows.Forms.Button();
+            this.btnWorkHourEditOK = new System.Windows.Forms.Button();
             this.lblWorkHoursEditContract = new System.Windows.Forms.Label();
             this.lblWorkHoursEditEmployee = new System.Windows.Forms.Label();
             this.dtpWorkHoursEditDate = new System.Windows.Forms.DateTimePicker();
@@ -42,15 +42,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nWorkHoursEditAmount)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdminEmployeeEditOK
+            // btnWorkHourEditOK
             // 
-            this.btnAdminEmployeeEditOK.Location = new System.Drawing.Point(289, 318);
-            this.btnAdminEmployeeEditOK.Name = "btnAdminEmployeeEditOK";
-            this.btnAdminEmployeeEditOK.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminEmployeeEditOK.TabIndex = 24;
-            this.btnAdminEmployeeEditOK.Text = "OK";
-            this.btnAdminEmployeeEditOK.UseVisualStyleBackColor = true;
-            this.btnAdminEmployeeEditOK.Click += new System.EventHandler(this.btnAdminEmployeeEditOK_Click);
+            this.btnWorkHourEditOK.Location = new System.Drawing.Point(289, 318);
+            this.btnWorkHourEditOK.Name = "btnWorkHourEditOK";
+            this.btnWorkHourEditOK.Size = new System.Drawing.Size(75, 23);
+            this.btnWorkHourEditOK.TabIndex = 24;
+            this.btnWorkHourEditOK.Text = "OK";
+            this.btnWorkHourEditOK.UseVisualStyleBackColor = true;
+            this.btnWorkHourEditOK.Click += new System.EventHandler(this.btnAdminEmployeeEditOK_Click);
             // 
             // lblWorkHoursEditContract
             // 
@@ -148,7 +148,7 @@
             0,
             0});
             this.nWorkHoursEditAmount.Name = "nWorkHoursEditAmount";
-            this.nWorkHoursEditAmount.Size = new System.Drawing.Size(344, 22);
+            this.nWorkHoursEditAmount.Size = new System.Drawing.Size(349, 22);
             this.nWorkHoursEditAmount.TabIndex = 29;
             this.nWorkHoursEditAmount.Value = new decimal(new int[] {
             1,
@@ -166,7 +166,7 @@
             this.Controls.Add(this.lblWorkHoursEditWorkType);
             this.Controls.Add(this.cbWorkHoursEditContract);
             this.Controls.Add(this.cboWorkHoursEditEmployees);
-            this.Controls.Add(this.btnAdminEmployeeEditOK);
+            this.Controls.Add(this.btnWorkHourEditOK);
             this.Controls.Add(this.lblWorkHoursEditContract);
             this.Controls.Add(this.lblWorkHoursEditEmployee);
             this.Controls.Add(this.dtpWorkHoursEditDate);
@@ -183,7 +183,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdminEmployeeEditOK;
+        private System.Windows.Forms.Button btnWorkHourEditOK;
         private System.Windows.Forms.Label lblWorkHoursEditContract;
         private System.Windows.Forms.Label lblWorkHoursEditEmployee;
         private System.Windows.Forms.DateTimePicker dtpWorkHoursEditDate;
