@@ -37,11 +37,15 @@ namespace Projekt
                             mainForm.Show();
                             this.Hide();
                         }
-                        else
+                        else if(role!=null)
                         {
                             AdminMainForm mainForm = new AdminMainForm(user, this);
                             mainForm.Show();
                             this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Role uživatele nebyla nalezena! V případě potřeby kontaktujte administrátora.");
                         }
                     }
                     else

@@ -44,6 +44,10 @@ namespace Projekt
             {
                 txtAdminRoleEditName.Text = role.Name;
             }
+            else
+            {
+                MessageBox.Show("Taková role neexistuje!");
+            }
         }
     }
 }

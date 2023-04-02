@@ -25,15 +25,7 @@ namespace Projekt
         {
             if (txtAdminContractAddDescription.Text != "" && txtAdminContractorAddName.Text != "")
             {
-                try
-                {
-                    sqlRepository.AddContract(txtAdminContractorAddName.Text, txtAdminContractAddDescription.Text);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                sqlRepository.AddContract(txtAdminContractorAddName.Text, txtAdminContractAddDescription.Text);
                 AdminContractControl.LoadData();
                 Close();
             }

@@ -41,6 +41,10 @@ namespace Projekt
                 AdminRoleEdit adminRoleEdit = new AdminRoleEdit(Convert.ToInt32(lvAdminRolesControl.SelectedItems[0].SubItems[1].Text),this);
                 adminRoleEdit.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Nebyl vybrán žádný záznam!");
+            }
         }
 
         private void btnAdminRoleAdd_Click(object sender, EventArgs e)

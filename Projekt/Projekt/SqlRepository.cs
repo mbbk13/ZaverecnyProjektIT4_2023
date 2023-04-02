@@ -131,7 +131,11 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Users where IdUser=@idUser";
                     cmd.Parameters.AddWithValue("idUser", idUser);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException) { MessageBox.Show("Daný uživatel nemůže být smazát, protože je součástí aktivní evidence, či je uložen pro archivaci!"); }
                 }
                 conn.Close();
             }
@@ -146,7 +150,14 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from WorkTypes where IdWorkType=@idWorkType";
                     cmd.Parameters.AddWithValue("idWorkType", idWork);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Daný typ práce nemůže být smazán, protože je součástí aktivní evidence, či je uložen pro archivaci!");
+                    }
                 }
                 conn.Close();
             }
@@ -161,7 +172,14 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Hours where IdHour=@idHour";
                     cmd.Parameters.AddWithValue("idHour", idHour);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Dané odpracované hodiny nemohou být smazány, protože jsou součástí aktivní evidence, či jsou uloženy pro archivaci!");
+                    }
                 }
                 conn.Close();
             }
@@ -176,7 +194,14 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Contracts where IdContract=@idContract";
                     cmd.Parameters.AddWithValue("idContract", idContract);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Daná zakázka nemůže být smazána, protože je součástí aktivní evidence, či je uložena pro archivaci!");
+                    }
                 }
                 conn.Close();
             }
@@ -191,7 +216,14 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Employees where IdEmployee=@idEmployee";
                     cmd.Parameters.AddWithValue("IdEmployee", idEmployee);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Daný zaměstnanec nemůže být smazát, protože je součástí aktivní evidence, či je uložen pro archivaci!");
+                    }
                 }
                 conn.Close();
             }
@@ -206,7 +238,14 @@ namespace Projekt
                 {
                     cmd.CommandText = "delete from Roles where IdRole=@idRole";
                     cmd.Parameters.AddWithValue("idRole", idRole);
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Daná role nemůže být smazána, protože je součástí aktivní evidence, či je uložena pro archivaci!");
+                    }
                 }
                 conn.Close();
             }
@@ -226,11 +265,7 @@ namespace Projekt
                         {
                             if (reader.Read())
                             {
-                                user = new User(reader["UserName"].ToString(),Convert.ToInt32(reader["IdUser"]), (byte[])reader["Password"], (byte[])reader["PasswordSalt"], Convert.ToInt32(reader["Role"]));
-                            }
-                            else
-                            {
-                                MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                                user = new User(reader["UserName"].ToString(), Convert.ToInt32(reader["IdUser"]), (byte[])reader["Password"], (byte[])reader["PasswordSalt"], Convert.ToInt32(reader["Role"]));
                             }
                         }
                     }
@@ -257,7 +292,7 @@ namespace Projekt
                         }
                         else
                         {
-                            MessageBox.Show("Uživatel s takovýmto uživatelským jménem neexistuje!");
+                            MessageBox.Show("Uživatel s takovýmto evidenčním číslem neexistuje!");
                         }
                     }
                 }
@@ -378,6 +413,10 @@ namespace Projekt
                         if (reader.Read())
                         {
                             hour=new Hour(Convert.ToInt32(reader["IdHour"]), Convert.ToInt32(reader["AmountOfHours"]), Convert.ToDateTime(reader["Date"]), Convert.ToInt32(reader["IdEmployee"]),Convert.ToInt32(reader["IdContract"]), Convert.ToInt32(reader["IdWorkType"]));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Odpracované hodiny nebyly nalezeny!");
                         }
                     }
                 }
@@ -741,25 +780,5 @@ namespace Projekt
                 conn.Close();
             }
         }
-
-        /*public void Register(string userName, string password)
-        {
-            User = new User();
-            using (SqlConnection conn = new SqlConnection(Connection))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = "insert into Users values(@idEmployee,@userName,Convert(VARBINARY(max),@password),Convert(VARBINARY(max),@passwordSalt))";
-                    cmd.Parameters.AddWithValue("userName", userName);
-                    cmd.Parameters.AddWithValue("idEmployee", 1);
-                    User.HashPassword(password);
-                    cmd.Parameters.AddWithValue("password", User.Password);
-                    cmd.Parameters.AddWithValue("passwordSalt", User.PasswordSalt);
-                    cmd.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-        }*/
     }
 }

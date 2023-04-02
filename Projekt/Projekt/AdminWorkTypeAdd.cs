@@ -29,6 +29,10 @@ namespace Projekt
                 AdminWorkTypeControl.LoadData();
                 Close();
             }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
+            }
         }
     }
 }

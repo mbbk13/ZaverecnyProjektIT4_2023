@@ -31,6 +31,10 @@ namespace Projekt
                 txtAdminWorkTypeEditDescription.Text = workType.Description;
                 txtAdminWorkTypeEditName.Text = workType.Name;
             }
+            else
+            {
+                MessageBox.Show("Typ práce takového identifikačního čísla se nenašel!");
+            }
         }
 
         private void btnAdminWorkTypeEditOK_Click(object sender, EventArgs e)
@@ -40,6 +44,10 @@ namespace Projekt
                 sqlRepository.UpdateWorkType(txtAdminWorkTypeEditName.Text,txtAdminWorkTypeEditDescription.Text,IdWorkType);
                 AdminWorkTypeControl.LoadData();
                 Close();
+            }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
             }
         }
     }

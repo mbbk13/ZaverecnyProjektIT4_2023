@@ -50,6 +50,10 @@ namespace Projekt
                     MessageBox.Show("Takovýto uživatel není v naší databázi!");
                 }
             }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,7 +60,7 @@ namespace Projekt
             if (lvAdminContractControl.SelectedItems.Count > 0)
             {
                 sqlRepository.DeleteContract(Convert.ToInt32(lvAdminContractControl.SelectedItems[0].SubItems[2].Text));
-                LoadData();
+                LoadData();            
             }
             else
             {

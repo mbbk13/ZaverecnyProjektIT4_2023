@@ -44,20 +44,26 @@ namespace Projekt
         {
             if (txtAdminUserAddUsername.Text != null && cboEmployees.Text != null && cboRoles.Text != null)
             {
-                var idEmployee = cboEmployees.Text.Split('-');
-                var user = new User(txtAdminUserAddUsername.Text);
-                var role = sqlRepository.GetRole(cboRoles.Text);
-                user.ResetPassword();
-                sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee[1].Trim()), role.Id,user.Password,user.PasswordSalt);
-                ParentForm.LoadData();
-                Close();
-                MessageBox.Show("Uživatel úspěšně přidán!");
+                var existingUser = sqlRepository.GetUser(txtAdminUserAddUsername.Text);
+                if (existingUser==null)
+                {
+                    var idEmployee = cboEmployees.Text.Split('-');
+                    var user = new User(txtAdminUserAddUsername.Text);
+                    var role = sqlRepository.GetRole(cboRoles.Text);
+                    user.ResetPassword();
+                    sqlRepository.AddUser(user.UserName, Convert.ToInt32(idEmployee[1].Trim()), role.Id, user.Password, user.PasswordSalt);
+                    ParentForm.LoadData();
+                    Close();
+                    MessageBox.Show("Uživatel úspěšně přidán!"); 
+                }
+                else
+                {
+                    MessageBox.Show("Uživatel takovéhoto uživatelského jména již existuje!");
+                }
             }
             else{
-                MessageBox.Show("Musítě vyplnit všechna pole!");
+                MessageBox.Show("Musíte vyplnit všechna pole!");
             }
-            //var id = cboEmployees.Text.Split('-');
-            //MessageBox.Show("+"+ id[1].Trim());
         }
     }
 }

@@ -41,9 +41,16 @@ namespace Projekt
                 lvWorkHours.Columns[0].Width = 0;
                 lvWorkHours.Columns[2].Width = 0;
                 var hours = sqlRepository.GetHours(IdUser);
-                foreach (var hour in hours)
+                if (hours!=null)
                 {
-                    lvWorkHours.Items.Add(new ListViewItem(new string[] { "", hour.IdContract.ToString(), hour.Id.ToString(), sqlRepository.GetWorkType(hour.IdWorkType).Name.ToString(), hour.Amount.ToString(), sqlRepository.GetContract(hour.IdContract).Description, Convert.ToString(hour.Date.ToString("d")) }));
+                    foreach (var hour in hours)
+                    {
+                        lvWorkHours.Items.Add(new ListViewItem(new string[] { "", hour.IdContract.ToString(), hour.Id.ToString(), sqlRepository.GetWorkType(hour.IdWorkType).Name.ToString(), hour.Amount.ToString(), sqlRepository.GetContract(hour.IdContract).Description, Convert.ToString(hour.Date.ToString("d")) }));
+                    } 
+                }
+                else
+                {
+                    MessageBox.Show("Nebyly nalezeny žádné záznamy odpracovaných hodin!");
                 }
             }
         }
@@ -112,6 +119,10 @@ namespace Projekt
                     MessageBox.Show("Nevybral jste žádný/platný záznam!");
                 }
                 LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Nevybral jste žádný záznam!");
             }
         }
     }

@@ -31,6 +31,10 @@ namespace Projekt
                 txtAdminContractEditDescription.Text = contract.Description;
                 txtAdminContractEditName.Text = contract.CostumerName;
             }
+            else
+            {
+                MessageBox.Show("Zakázka daného čísla neexistuje!");
+            }
         }
 
         private void btnAdminContractEditOK_Click(object sender, EventArgs e)

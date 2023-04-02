@@ -8,12 +8,6 @@ namespace Projekt
 {
     internal class Employee
     {
-        //public Employee(int id,string firstName, string lastName)
-        //{
-        //    FirstName = firstName;
-        //    LastName = lastName;
-        //    Id= id;
-        //}
 
         public Employee(DateTime birthDate, string firstName, string lastName, int id, string email, string phone)
         {

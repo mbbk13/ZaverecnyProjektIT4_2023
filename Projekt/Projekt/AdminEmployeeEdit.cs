@@ -32,8 +32,11 @@ namespace Projekt
                 txtAdminEmployeeEditEmail.Text = employee.Email;
                 txtAdminEmployeeEditLastname.Text = employee.LastName;
                 txtAdminEmployeeEditPhone.Text = employee.Phone;
-                //MessageBox.Show(employee.BirthDate.ToString());
                 dtpAdminEmployeeEditBirthdate.Value = employee.BirthDate;
+            }
+            else
+            {
+                MessageBox.Show("Zaměstnanec daného čísla neexistuje!");
             }
         }
 
@@ -41,12 +44,13 @@ namespace Projekt
         {
             if (txtAdminEmployeeEditEmail.Text != "" && txtAdminEmployeeEditName.Text!="" && txtAdminEmployeeEditLastname.Text != "" && txtAdminEmployeeEditPhone.Text!="")
             {
-                //MessageBox.Show(dtpAdminEmployeeEditBirthdate.Value.ToString());
-                //var dateBirth = dtpAdminEmployeeEditBirthdate.Value.Date;
-                //MessageBox.Show(dateBirth.ToString());
                 sqlRepository.UpdateEmployee(IdEmployee,txtAdminEmployeeEditName.Text,txtAdminEmployeeEditLastname.Text,dtpAdminEmployeeEditBirthdate.Value,txtAdminEmployeeEditEmail.Text,txtAdminEmployeeEditPhone.Text);
                 AdminEmployeesControl.LoadData();
                 Close();
+            }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
             }
         }
     }

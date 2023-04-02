@@ -41,6 +41,10 @@ namespace Projekt
                 AdminWorkTypeEdit adminWorkTypeControlEdit = new AdminWorkTypeEdit(Convert.ToInt32(lvAdminWorkTypeControl.SelectedItems[0].SubItems[1].Text),this);
                 adminWorkTypeControlEdit.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Nevybral jste žádnou roli!");
+            }
         }
 
         private void btnAdminRoleAdd_Click(object sender, EventArgs e)
@@ -55,6 +59,10 @@ namespace Projekt
             {
                 sqlRepository.DeleteWorkType(Convert.ToInt32(lvAdminWorkTypeControl.SelectedItems[0].SubItems[1].Text));
                 LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Nevybral jste žádnou roli!");
             }
         }
     }

@@ -86,6 +86,10 @@ namespace Projekt
                 WorkHoursForm.LoadData();
                 Close();
             }
+            else
+            {
+                MessageBox.Show("Nevyplnil jste všechna pole!");
+            }
         }
     }
 }

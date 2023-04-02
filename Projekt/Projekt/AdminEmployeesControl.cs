@@ -41,6 +41,10 @@ namespace Projekt
                 AdminEmployeeEdit adminEmployeeEdit = new AdminEmployeeEdit(Convert.ToInt32(lvAdminEmployeesControl.SelectedItems[0].SubItems[2].Text),this);
                 adminEmployeeEdit.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Nevybral jste žádný záznam!");
+            }
         }
 
         private void btnAdminUserAdd_Click(object sender, EventArgs e)
